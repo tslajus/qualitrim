@@ -1,0 +1,34 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  font: inherit;
+  font-family: "Quattrocento", sans-serif;
+  letter-spacing: 10%;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.75;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}

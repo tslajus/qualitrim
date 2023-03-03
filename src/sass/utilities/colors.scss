@@ -1,0 +1,27 @@
+$color-primary: #ebbc65;
+$color-secondary: #972b24;
+$color-tertiary: #4c8886;
+$color-dark: #29313a;
+$color-dark-tint: #3d454f;
+$color-light: #fff8ec;
+
+.color {
+  &-primary {
+    color: $color-primary;
+  }
+  &-secondary {
+    color: $color-secondary;
+  }
+  &-tertiary {
+    color: $color-tertiary;
+  }
+  &-dark {
+    color: $color-dark;
+  }
+  &-dark-tint {
+    color: $color-dark-tint;
+  }
+  &-light {
+    color: $color-light;
+  }
+}

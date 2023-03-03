@@ -1,0 +1,75 @@
+$fs-heading-big: 12rem;
+$fs-heading-medium: 5rem;
+$fs-paragraph: 1.6rem;
+$fs-paragraph-big: 2.1rem;
+$fs-link-big: 2.9rem;
+$fs-shadow-big: 16rem;
+$fs-shadow-small: 9rem;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$ff-heading: "Oswald", sans-serif;
+$ff-body: "Quattrocento", sans-serif;
+
+.logo {
+  @include font-style($ff-body, $color-primary, $fs-heading-medium, $fw-bold);
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.heading {
+  @include font-style(
+    $ff-heading,
+    $color-primary,
+    $fs-heading-medium,
+    $fw-bold
+  );
+
+  &--big {
+    font-size: $fs-heading-big;
+  }
+}
+
+.paragraph {
+  @include font-style($ff-body, "", $fs-paragraph, $fw-regular);
+
+  &--light {
+    font-family: $ff-heading;
+    font-weight: $fw-light;
+  }
+}
+
+.link {
+  @include font-style($ff-heading, $color-primary, $fs-link-big, $fw-light);
+
+  &--small {
+    font-size: $fs-paragraph-big;
+    font-weight: $fw-medium;
+  }
+}
+
+.subheading {
+  @include font-style($ff-body, $color-tertiary, $fs-heading-medium, $fw-bold);
+}
+
+.text-shadow {
+  @include font-style($ff-body, $color-dark-tint, $fs-shadow-big, $fw-bold);
+
+  user-select: none;
+  transition: color 1s;
+
+  &:hover {
+    color: $color-secondary;
+  }
+
+  &--small {
+    font-size: $fs-shadow-small;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

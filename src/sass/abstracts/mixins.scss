@@ -1,0 +1,30 @@
+@mixin breakpoint($point) {
+  @if $point == "mobile" {
+    @media (min-width: $bp-mobile) {
+      @content;
+    }
+  } @else if $point == "tab-port" {
+    @media (min-width: $bp-tab-port) {
+      @content;
+    }
+  } @else if $point == "tab-land" {
+    @media (min-width: $bp-tab-land) {
+      @content;
+    }
+  } @else if $point == "desktop-small" {
+    @media (min-width: $bp-desktop-small) {
+      @content;
+    }
+  } @else if $point == "desktop-big" {
+    @media (min-width: $bp-desktop-big) {
+      @content;
+    }
+  }
+}
+
+@mixin text-style($family, $color, $size, $weight) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}

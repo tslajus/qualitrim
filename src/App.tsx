@@ -1,12 +1,5 @@
-import {
-  Header,
-  Home,
-  Benefits,
-  Testimonials,
-  Team,
-  Form,
-  Footer,
-} from "./sections";
+import { Header, Footer } from "./layouts";
+import { Home, Benefits, Testimonials, Team, Form } from "./sections";
 
 function App() {
   return (
