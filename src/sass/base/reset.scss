@@ -1,12 +1,14 @@
+@import "./typography.scss";
+
 *,
 *:before,
 *:after {
+  @include font-style($ff-body, "", $fs-paragraph, $fw-regular);
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   border: 0;
-  font: inherit;
-  font-family: "Quattrocento", sans-serif;
   letter-spacing: 10%;
   vertical-align: baseline;
   text-decoration: none;

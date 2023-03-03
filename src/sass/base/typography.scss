@@ -1,3 +1,5 @@
+@import "../utilities";
+
 $fs-heading-big: 12rem;
 $fs-heading-medium: 5rem;
 $fs-paragraph: 1.6rem;
@@ -17,6 +19,7 @@ $ff-body: "Quattrocento", sans-serif;
 .logo {
   @include font-style($ff-body, $color-primary, $fs-heading-medium, $fw-bold);
 
+  letter-spacing: 30%;
   cursor: pointer;
   user-select: none;
 }

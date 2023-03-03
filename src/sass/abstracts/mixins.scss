@@ -22,7 +22,7 @@
   }
 }
 
-@mixin text-style($family, $color, $size, $weight) {
+@mixin font-style($family, $color, $size, $weight) {
   font-family: $family;
   color: $color;
   font-size: $size;
