@@ -1,0 +1,15 @@
+.button {
+  background-color: $color-secondary;
+  padding: $spacing-xs $spacing-md;
+  cursor: pointer;
+  text-align: center;
+
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: $color-secondary-tint;
+  }
+
+  &:active {
+    background-color: $color-secondary;
+  }
+}

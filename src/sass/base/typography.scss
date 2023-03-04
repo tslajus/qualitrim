@@ -4,7 +4,6 @@ $fs-heading-big: 12rem;
 $fs-heading-medium: 5rem;
 $fs-paragraph: 1.6rem;
 $fs-paragraph-big: 2.1rem;
-$fs-link-big: 2.9rem;
 $fs-shadow-big: 16rem;
 $fs-shadow-small: 9rem;
 
@@ -47,10 +46,15 @@ $ff-body: "Quattrocento", sans-serif;
 }
 
 .link {
-  @include font-style($ff-heading, $color-primary, $fs-link-big, $fw-light);
+  @include font-style(
+    $ff-heading,
+    $color-primary,
+    $fs-paragraph-big,
+    $fw-light
+  );
 
-  &--small {
-    font-size: $fs-paragraph-big;
+  line-height: 1;
+  &--bold {
     font-weight: $fw-medium;
   }
 }
