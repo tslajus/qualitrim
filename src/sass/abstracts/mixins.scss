@@ -1,30 +1,50 @@
 @mixin breakpoint($point) {
   @if $point == "mobile" {
-    @media (min-width: $bp-mobile) {
+    @media (max-width: $mobile) {
       @content;
     }
   } @else if $point == "tab-port" {
-    @media (min-width: $bp-tab-port) {
+    @media (max-width: $tab-port) {
       @content;
     }
   } @else if $point == "tab-land" {
-    @media (min-width: $bp-tab-land) {
+    @media (max-width: $tab-land) {
       @content;
     }
   } @else if $point == "desktop-small" {
-    @media (min-width: $bp-desktop-small) {
+    @media (max-width: $desktop-small) {
       @content;
     }
   } @else if $point == "desktop-big" {
-    @media (min-width: $bp-desktop-big) {
+    @media (max-width: $desktop-big) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $point) {
       @content;
     }
   }
 }
 
-@mixin font-style($family, $color, $size, $weight) {
+@mixin font-style($family, $color, $size, $weight, $space: $ls-small) {
   font-family: $family;
   color: $color;
   font-size: $size;
   font-weight: $weight;
+  letter-spacing: $space;
+}
+
+@mixin display-flex(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $wrap: nowrap,
+  $gap: 0
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
 }

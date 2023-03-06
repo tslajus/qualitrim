@@ -1,15 +1,12 @@
-@import "./typography.scss";
+@import "typography";
 
 *,
 *:before,
 *:after {
-  @include font-style($ff-body, "", $fs-paragraph, $fw-regular);
-
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   border: 0;
-  letter-spacing: 10%;
   vertical-align: baseline;
   text-decoration: none;
 }

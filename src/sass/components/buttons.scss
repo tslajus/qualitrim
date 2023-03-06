@@ -1,0 +1,78 @@
+@import "../utilities/layers.scss";
+
+.button {
+  background-color: $color-secondary;
+  padding: $spacing-xs $spacing-md;
+  cursor: pointer;
+  text-align: center;
+
+  transition: $tr-bg-short;
+  &:hover {
+    background-color: $color-secondary-tint;
+  }
+
+  &:active {
+    background-color: $color-secondary;
+  }
+}
+
+.menu-btn {
+  &-container {
+    z-index: $z-front;
+  }
+
+  @include display-flex("", center, center);
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+
+  &__hamburger {
+    position: relative;
+    transition: $tr-all-short;
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-primary;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: $tr-all-short;
+    }
+
+    &::before {
+      top: -1rem;
+    }
+    &::after {
+      top: 1rem;
+    }
+
+    &--open {
+      background-color: transparent;
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &:hover &__lines::before {
+    top: -1.2rem;
+  }
+
+  &:hover &__lines::after {
+    top: 1.2rem;
+  }
+}

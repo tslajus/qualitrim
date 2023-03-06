@@ -10,3 +10,8 @@ interface PageContextTypes {
   };
   navLinks: { id: string; name: string }[];
 }
+
+type Link = {
+  id: string;
+  name: string;
+};

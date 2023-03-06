@@ -1,4 +1,5 @@
 import { createContext, ReactNode } from "react";
+import data from "@/data/navData.json";
 
 const portSize = {
   mobile: "(max-width: 350px)",
@@ -8,14 +9,12 @@ const portSize = {
   desktopBig: "(max-width: 1440px)",
 };
 
-const navLinks = [
-  { id: "home", name: "Home" },
-  { id: "benefits", name: "Benefits" },
-  { id: "testimonials", name: "Testimonials" },
-  { id: "team", name: "Team" },
-];
+const navLinks = data.navLinks;
 
-const PageContext = createContext<PageContextTypes>({ portSize, navLinks });
+const PageContext = createContext<PageContextTypes>({
+  portSize,
+  navLinks,
+});
 
 const Provider = ({ children }: { children: ReactNode }) => {
   const sharedValues = { portSize, navLinks };
