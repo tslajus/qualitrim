@@ -1,0 +1,54 @@
+@import "../utilities/layers.scss";
+
+.header {
+  background-color: $color-dark;
+  width: 100%;
+  height: $spacing-5xl;
+  padding: $spacing-md $spacing-xl;
+
+  &__desktop {
+    @include display-flex(row, end, center);
+    width: 100%;
+
+    &-links {
+      @include display-flex(row, space-between, center, "", $spacing-xl);
+      margin-right: $spacing-xl;
+    }
+  }
+
+  &__mobile {
+    @include display-flex(column, center, center, "", $spacing-4xl);
+
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: $spacing-20xl;
+    height: 100vh;
+    background-color: $color-dark;
+    z-index: $z-mid-front;
+    box-shadow: $shadow-nav;
+    -webkit-box-shadow: $shadow-nav;
+    -moz-box-shadow: $shadow-nav;
+
+    &-links {
+      @include display-flex(column, center, center, "", $spacing-xl);
+    }
+  }
+
+  &__inner {
+    @include display-flex(row, space-between, center);
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@include breakpoint("tab-port") {
+  .header {
+    &__desktop {
+      &-links {
+        gap: $spacing-md;
+        margin-right: $spacing-lg;
+      }
+    }
+  }
+}

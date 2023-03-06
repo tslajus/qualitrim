@@ -1,0 +1,18 @@
+.logo {
+  @include font-style(
+    $ff-body,
+    $color-primary,
+    $fs-heading-small,
+    $fw-bold,
+    $ls-big
+  );
+
+  cursor: pointer;
+  user-select: none;
+}
+
+@include breakpoint($mobile) {
+  .logo {
+    font-size: $fs-paragraph-big;
+  }
+}

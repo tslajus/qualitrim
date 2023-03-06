@@ -1,0 +1,10 @@
+{
+  "logo": "Qualitrim",
+
+  "navLinks": [
+    { "id": "home", "name": "Home" },
+    { "id": "benefits", "name": "Benefits" },
+    { "id": "testimonials", "name": "Testimonials" },
+    { "id": "team", "name": "Team" }
+  ]
+}
