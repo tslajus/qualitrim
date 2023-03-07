@@ -4,10 +4,11 @@
 $fs-heading-big: 12rem;
 $fs-heading-medium: 5rem;
 $fs-heading-small: 4rem;
+$fs-subheading: 5.3rem;
 $fs-paragraph: 1.6rem;
 $fs-paragraph-big: 2.1rem;
 
-$fs-shadow-big: 16rem;
+$fs-shadow-big: 19rem;
 $fs-shadow-small: 9rem;
 
 $fw-light: 300;
@@ -28,14 +29,11 @@ $ls-small: 0.1em;
     $fs-heading-medium,
     $fw-bold
   );
-
-  &--big {
-    font-size: $fs-heading-big;
-  }
 }
 
 .paragraph {
   @include font-style($ff-body, "", $fs-paragraph, $fw-regular);
+  line-height: 1.5;
 
   &--light {
     font-family: $ff-heading;
@@ -44,25 +42,14 @@ $ls-small: 0.1em;
 }
 
 .subheading {
-  @include font-style($ff-body, $color-tertiary, $fs-heading-medium, $fw-bold);
+  @include font-style($ff-body, $color-tertiary, $fs-subheading, $fw-bold);
 }
 
 .text-shadow {
   @include font-style($ff-body, $color-dark-tint, $fs-shadow-big, $fw-bold);
 
   user-select: none;
-  transition: color 1s;
-
-  &:hover {
-    color: $color-secondary;
-  }
-
-  &--small {
-    font-size: $fs-shadow-small;
-    &:hover {
-      color: $color-primary;
-    }
-  }
+  transition: $tr-color-long;
 }
 
 .link {

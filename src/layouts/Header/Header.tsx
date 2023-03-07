@@ -1,7 +1,8 @@
+import { useMediaQuery, usePageContext } from "@/hooks";
+import { useOnTopState } from "@/utils";
 import NavDesktop from "./NavDesktop";
 import NavMobile from "./NavMobile";
 import { Logo } from "@/components";
-import { useMediaQuery, usePageContext } from "@/hooks";
 
 type Props = {};
 
@@ -10,6 +11,7 @@ function Header({}: Props) {
   const navLinks = usePageContext("navLinks");
 
   const isSmallScreen = useMediaQuery(tabLand);
+  const onTop = useOnTopState();
 
   const renderedLinks = navLinks.map((link: Link) => (
     <div key={link.id} className="link">
@@ -24,7 +26,7 @@ function Header({}: Props) {
   );
 
   return (
-    <div className="header">
+    <div className={`header ${!onTop ? "header--on-scroll" : ""}`}>
       <div className="header__inner">
         <div className="logo">
           <Logo />

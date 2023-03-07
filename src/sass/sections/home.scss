@@ -1,0 +1,52 @@
+.home {
+  @include display-flex(column, center, center);
+  width: 100%;
+  min-height: 100vh;
+  background-color: $color-dark;
+  padding: $spacing-5xl;
+
+  &__container {
+    @include display-flex(row, center, center, "", $spacing-xxl);
+    width: 100%;
+    height: auto;
+    padding-top: $spacing-lg;
+  }
+
+  &__text-block {
+    @include display-flex(column, space-between, start, "", $spacing-lg);
+    width: 100%;
+    padding: $spacing-5xl 0;
+  }
+
+  &__heading {
+    font-size: $fs-heading-big;
+    margin-bottom: $spacing-sm;
+    position: relative;
+    z-index: $z-front;
+
+    &-shadow {
+      position: absolute;
+      top: -8rem;
+      left: -5rem;
+      transition: $tr-all-long;
+    }
+  }
+
+  &__heading-box {
+    position: relative;
+    &:hover .home__heading-shadow {
+      color: $color-secondary;
+      opacity: 0.5;
+    }
+  }
+
+  &__asset {
+    @include display-flex(row, center, center);
+    width: 60%;
+
+    img {
+      max-width: 100%;
+      max-height: calc(100vh - $spacing-15xl);
+    }
+  }
+}

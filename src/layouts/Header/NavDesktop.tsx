@@ -1,5 +1,7 @@
 import { usePageContext } from "@/hooks";
 import { Button } from "@/components";
+import data from "@/data/navData.json";
+
 type Props = {
   links: React.ReactNode;
 };
@@ -10,7 +12,7 @@ function NavDesktop({ links }: Props) {
   return (
     <div className="header__desktop">
       <div className="header__desktop-links">{links}</div>
-      <Button>Get in touch</Button>
+      <Button>{data.CTA}</Button>
     </div>
   );
 }
