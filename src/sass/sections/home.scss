@@ -16,6 +16,10 @@
     @include display-flex(column, space-between, start, "", $spacing-lg);
     width: 100%;
     padding: $spacing-5xl 0;
+
+    .paragraph {
+      margin-bottom: $spacing-lg;
+    }
   }
 
   &__heading {
@@ -48,5 +52,9 @@
       max-width: 100%;
       max-height: calc(100vh - $spacing-15xl);
     }
+  }
+
+  &__buttons {
+    @include display-flex(row, center, center, "", $spacing-lg);
   }
 }

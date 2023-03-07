@@ -45,13 +45,6 @@ $ls-small: 0.1em;
   @include font-style($ff-body, $color-tertiary, $fs-subheading, $fw-bold);
 }
 
-.text-shadow {
-  @include font-style($ff-body, $color-dark-tint, $fs-shadow-big, $fw-bold);
-
-  user-select: none;
-  transition: $tr-color-long;
-}
-
 .link {
   @include font-style(
     $ff-heading,
@@ -76,6 +69,26 @@ $ls-small: 0.1em;
   &--no-hover {
     &:hover {
       color: $color-primary;
+    }
+  }
+}
+
+.text-shadow {
+  @include font-style($ff-body, $color-dark-tint, $fs-shadow-big, $fw-bold);
+
+  user-select: none;
+  transition: $tr-color-long;
+}
+
+.text-narrow {
+  @include font-style($ff-heading, $color-primary, $fs-paragraph-big, $fw-bold);
+  line-height: 1.25;
+
+  &--link {
+    cursor: pointer;
+    transition: $tr-color-short;
+    &:hover {
+      color: $color-light;
     }
   }
 }

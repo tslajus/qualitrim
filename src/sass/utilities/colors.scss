@@ -15,22 +15,22 @@ $color-dark-shade: #252c34;
 $color-light: #fff8ec;
 
 .color {
-  &-primary {
+  &--primary {
     color: $color-primary;
   }
-  &-secondary {
+  &--secondary {
     color: $color-secondary;
   }
-  &-tertiary {
+  &--tertiary {
     color: $color-tertiary;
   }
-  &-dark {
+  &--dark {
     color: $color-dark;
   }
-  &-dark-tint {
+  &--dark-tint {
     color: $color-dark-tint;
   }
-  &-light {
+  &--light {
     color: $color-light;
   }
 }
