@@ -1,10 +1,16 @@
 @import "../utilities/layers.scss";
 
 .header {
+  position: fixed;
   background-color: $color-dark;
   width: 100%;
-  height: $spacing-5xl;
+  height: $sz-header-desktop;
   padding: $spacing-md $spacing-xl;
+  transition: $tr-bg-long;
+
+  &--on-scroll {
+    background-color: $color-dark-tint;
+  }
 
   &__desktop {
     @include display-flex(row, end, center);
@@ -22,9 +28,9 @@
     position: fixed;
     right: 0;
     top: 0;
-    width: $spacing-20xl;
+    width: $sz-header-mobile;
     height: 100vh;
-    background-color: $color-dark;
+    background-color: $color-dark-tint;
     z-index: $z-mid-front;
     box-shadow: $shadow-nav;
     -webkit-box-shadow: $shadow-nav;

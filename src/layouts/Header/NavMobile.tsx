@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HamburgerButton, Button } from "@/components";
+import data from "@/data/navData.json";
 
 type Props = {
   links: React.ReactNode;
@@ -21,7 +22,7 @@ function NavMobile({ links }: Props) {
       {isMenuOpen && (
         <div className="header__mobile">
           <div className="header__mobile-links">{links}</div>
-          <Button>Get in touch</Button>
+          <Button>{data.CTA}</Button>
         </div>
       )}
     </>

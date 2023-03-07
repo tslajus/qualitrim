@@ -6,5 +6,7 @@
     { "id": "benefits", "name": "Benefits" },
     { "id": "testimonials", "name": "Testimonials" },
     { "id": "team", "name": "Team" }
-  ]
+  ],
+
+  "CTA": "Get in touch"
 }
