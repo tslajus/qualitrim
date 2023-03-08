@@ -7,6 +7,7 @@
   height: $sz-header-desktop;
   padding: $spacing-md $spacing-xl;
   transition: $tr-bg-long;
+  z-index: $z9;
 
   &--on-scroll {
     background-color: $color-dark-tint;
@@ -17,13 +18,13 @@
     width: 100%;
 
     &-links {
-      @include display-flex(row, space-between, center, "", $spacing-xl);
+      @include display-flex(row, space-between, center, $spacing-xl);
       margin-right: $spacing-xl;
     }
   }
 
   &__mobile {
-    @include display-flex(column, center, center, "", $spacing-4xl);
+    @include display-flex(column, center, center, $spacing-4xl);
 
     position: fixed;
     right: 0;
@@ -31,13 +32,13 @@
     width: $sz-header-mobile;
     height: 100vh;
     background-color: $color-dark-tint;
-    z-index: $z-mid-front;
+    z-index: $z9;
     box-shadow: $shadow-nav;
     -webkit-box-shadow: $shadow-nav;
     -moz-box-shadow: $shadow-nav;
 
     &-links {
-      @include display-flex(column, center, center, "", $spacing-xl);
+      @include display-flex(column, center, center, $spacing-xl);
     }
   }
 

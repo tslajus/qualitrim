@@ -1,0 +1,16 @@
+.benefits {
+  @include display-flex(column, start, start, $spacing-5xl);
+  width: 100%;
+  height: auto;
+  background-color: $color-light;
+  padding: $spacing-15xl $spacing-5xl calc($spacing-15xl * 2);
+
+  &__text-box {
+    @include display-flex(column, space-between, start, $spacing-lg);
+    width: 60%;
+  }
+
+  &__features {
+    @include display-flex(row, space-between, stretch, $spacing-4xl);
+  }
+}
