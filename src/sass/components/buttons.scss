@@ -18,10 +18,10 @@
 
 .menu-btn {
   &-container {
-    z-index: $z-front;
+    z-index: $z10;
   }
 
-  @include display-flex("", center, center);
+  @include display-flex(row, center, center);
   width: 4rem;
   height: 4rem;
   cursor: pointer;

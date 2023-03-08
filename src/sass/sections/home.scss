@@ -6,14 +6,14 @@
   padding: $spacing-5xl;
 
   &__container {
-    @include display-flex(row, center, center, "", $spacing-xxl);
+    @include display-flex(row, center, center, $spacing-xxl);
     width: 100%;
     height: auto;
     padding-top: $spacing-lg;
   }
 
   &__text-block {
-    @include display-flex(column, space-between, start, "", $spacing-lg);
+    @include display-flex(column, space-between, start, $spacing-lg);
     width: 100%;
     padding: $spacing-5xl 0;
 
@@ -26,7 +26,7 @@
     font-size: $fs-heading-big;
     margin-bottom: $spacing-sm;
     position: relative;
-    z-index: $z-front;
+    z-index: $z1;
 
     &-shadow {
       position: absolute;
@@ -55,6 +55,6 @@
   }
 
   &__buttons {
-    @include display-flex(row, center, center, "", $spacing-lg);
+    @include display-flex(row, center, center, $spacing-lg);
   }
 }

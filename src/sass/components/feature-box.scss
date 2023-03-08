@@ -1,5 +1,5 @@
 .feature {
-  @include display-flex(column, "", center, "", $spacing-xxl);
+  @include display-flex(column, "", center, $spacing-xxl);
   background-color: $color-dark;
   padding: $spacing-xxl;
   flex: 1;
@@ -7,17 +7,17 @@
   position: relative;
 
   &__text {
-    @include display-flex(column, space-between, center, "", $spacing-lg);
+    @include display-flex(column, space-between, center, $spacing-lg);
     text-align: center;
     height: auto;
     flex: 1;
     margin-bottom: $spacing-sm;
-    z-index: $z-front;
+    z-index: $z5;
   }
 
   &-icon {
     width: 10rem;
-    z-index: $z-front;
+    z-index: $z6;
   }
 
   &::before {
@@ -29,6 +29,6 @@
     height: 100%;
     background-color: $color-dark;
     opacity: 0.9;
-    z-index: $z-mid-front;
+    z-index: $z5;
   }
 }

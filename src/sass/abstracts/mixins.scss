@@ -38,13 +38,13 @@
   $direction: row,
   $justify: flex-start,
   $align: stretch,
-  $wrap: nowrap,
-  $gap: 0
+  $gap: 0,
+  $wrap: nowrap
 ) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
-  flex-wrap: $wrap;
   gap: $gap;
+  flex-wrap: $wrap;
 }

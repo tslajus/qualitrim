@@ -1,15 +1,15 @@
 @import "../utilities";
 @import "transitions";
 
-$fs-heading-big: 12rem;
-$fs-heading-medium: 5rem;
-$fs-heading-small: 4rem;
+$fs-heading-big: $fs-4xl;
+$fs-heading-medium: $fs-lg;
+$fs-heading-small: $fs-md;
 $fs-subheading: 5.3rem;
-$fs-paragraph: 1.6rem;
-$fs-paragraph-big: 2.1rem;
+$fs-paragraph: $fs-xxs;
+$fs-paragraph-big: $fs-xs;
 
-$fs-shadow-big: 19rem;
-$fs-shadow-small: 9rem;
+$fs-shadow-big: $fs-6xl;
+$fs-shadow-small: $fs-xxl;
 
 $fw-light: 300;
 $fw-regular: 400;
@@ -17,7 +17,8 @@ $fw-medium: 500;
 $fw-bold: 700;
 
 $ff-heading: "Oswald", sans-serif;
-$ff-body: "Quattrocento", sans-serif;
+$ff-subheading: "Quattrocento", sans-serif;
+$ff-body: "Martel", sans-serif;
 
 $ls-big: 0.3em;
 $ls-small: 0.1em;
@@ -33,7 +34,7 @@ $ls-small: 0.1em;
 
 .paragraph {
   @include font-style($ff-body, "", $fs-paragraph, $fw-regular);
-  line-height: 1.5;
+  line-height: 1.75;
 
   &--light {
     font-family: $ff-heading;
@@ -42,7 +43,12 @@ $ls-small: 0.1em;
 }
 
 .subheading {
-  @include font-style($ff-body, $color-tertiary, $fs-subheading, $fw-bold);
+  @include font-style(
+    $ff-subheading,
+    $color-tertiary,
+    $fs-subheading,
+    $fw-bold
+  );
 }
 
 .link {
@@ -74,18 +80,24 @@ $ls-small: 0.1em;
 }
 
 .text-shadow {
-  @include font-style($ff-body, $color-dark-tint, $fs-shadow-big, $fw-bold);
+  @include font-style(
+    $ff-subheading,
+    $color-dark-tint,
+    $fs-shadow-big,
+    $fw-bold
+  );
 
   user-select: none;
   transition: $tr-color-long;
 }
 
 .text-narrow {
-  @include font-style($ff-heading, $color-primary, $fs-paragraph-big, $fw-bold);
+  @include font-style($ff-heading, $color-primary, $fs-sm, $fw-bold);
   line-height: 1.25;
 
   &--link {
     cursor: pointer;
+    font-size: $fs-paragraph-big;
     transition: $tr-color-short;
     &:hover {
       color: $color-light;
