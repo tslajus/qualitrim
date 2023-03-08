@@ -3,7 +3,7 @@
   width: 100%;
   height: auto;
   background-color: $color-light;
-  padding: $spacing-15xl $spacing-5xl calc($spacing-15xl * 2);
+  padding: $spacing-15xl $spacing-5xl $spacing-12xl;
 
   &__text-box {
     @include display-flex(column, space-between, start, $spacing-lg);

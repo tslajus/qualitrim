@@ -1,0 +1,30 @@
+.clients {
+  width: 100%;
+  height: 100rem;
+  background-color: $color-light;
+  padding: $spacing-5xl;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: $spacing-4xl;
+  position: relative;
+
+  &__text-box {
+    @include display-flex(column, center, start, $spacing-lg);
+    padding: $spacing-5xl;
+    width: 100%;
+    z-index: $z5;
+    grid-column: 2;
+  }
+
+  &__background {
+    background-color: $color-primary;
+    width: 100%;
+    height: calc(100% - $spacing-15xl);
+    position: absolute;
+    bottom: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: $spacing-4xl;
+  }
+}
