@@ -22,7 +22,7 @@ function FeatureBox({ data }: Props) {
       <img className="feature-icon" src={`src/assets/icons/${data.icon}`} />
 
       <div className="feature__text">
-        <h3 className="text-narrow">{data.title}</h3>
+        <h4 className="text-narrow">{data.title}</h4>
         <p className="paragraph color--light">{data.paragraph}</p>
         <LearnMore />
       </div>

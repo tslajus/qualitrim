@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import { makeUpperCase } from "@/utils";
+import {
+  GoChevronRight as IconRight,
+  GoChevronLeft as IconLeft,
+} from "react-icons/go";
 
 type Props = {
   data: { id: string; name: string; text: string; img: string }[];
@@ -36,8 +40,10 @@ function TestimonialsBox({ data }: Props) {
       <p>- {makeUpperCase(client.name)} -</p>
 
       <div className="testimonials-box__arrows">
-        <span onClick={() => handleClientNumber("back")}>&larr;</span>
-        <span onClick={() => handleClientNumber("next")}>&rarr;</span>
+        <IconLeft onClick={() => handleClientNumber("back")} />
+        <IconRight onClick={() => handleClientNumber("next")} />
+        {/* <span >&larr;</span> */}
+        {/* <span onClick={() => handleClientNumber("next")}>&rarr;</span> */}
       </div>
     </div>
   );

@@ -1,0 +1,30 @@
+{
+  "heading": "Meet our members",
+  "paragraph": "Our team is composed of seasoned professionals who have honed their skills through years of experience and training. From classic cuts to modern styling, our barbers are experts at creating a look that suits your unique personality and style. We take pride in our work and are dedicated to making sure every visit is a memorable experience.",
+  "members": [
+    {
+      "id": "tm1",
+      "name": "Tim",
+      "text": "Ready for a standout hairstyle? Trust Tim, the experienced barber who can cater to any style or preference. With his expert touch, you'll leave his chair feeling like a true icon.",
+      "img": "Tim.jpg"
+    },
+    {
+      "id": "tm2",
+      "name": "Michal",
+      "text": "Step into Michal's chair and let his expert hands work their magic. With an exceptional attention to detail and a passion for his craft, he'll give you a cut that's tailored to your unique style and personality.",
+      "img": "Michal.jpg"
+    },
+    {
+      "id": "tm3",
+      "name": "Devin",
+      "text": "Ready to elevate your hairstyle? Book an appointment with Devin, the barber with top-notch skills and an eye for style. Whether you're after a classic cut or a trendy new look, he's got you covered.",
+      "img": "Devin.jpg"
+    },
+    {
+      "id": "tm4",
+      "name": "Leonardo",
+      "text": "Step into Leonardo's barber chair for a cut that's a masterpiece. With his skilled hands and artistic vision, you'll leave feeling like a true work of art.",
+      "img": "Leonardo.jpg"
+    }
+  ]
+}
