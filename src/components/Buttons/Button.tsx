@@ -5,7 +5,7 @@ type Props = {
 
 function Button({ children, ...props }: Props) {
   return (
-    <button className="button link link--no-hover" {...props}>
+    <button className="button " {...props}>
       {children}
     </button>
   );

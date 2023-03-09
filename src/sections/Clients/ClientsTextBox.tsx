@@ -9,7 +9,7 @@ function ClientsTextBox({}: Props) {
 
   return (
     <>
-      <div className="clients__text-box">
+      <div className="clients__text-box-content">
         <h2 className="heading color--secondary">
           <span className="heading color--dark">{headingStart} </span>
           {headingEnd}

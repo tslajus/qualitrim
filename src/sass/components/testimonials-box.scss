@@ -1,4 +1,51 @@
 .testimonials-box {
+  @include display-flex(column, space-between, center, $spacing-xxl);
+  height: 96rem;
   background-color: $color-tertiary;
   z-index: $z5;
+  padding: $spacing-xxl;
+  position: relative;
+
+  &__content {
+    @include display-flex(column, center, end, $spacing-xl);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
+
+  &__arrows {
+    @include font-style($ff-heading, $color-primary, $fs-lg, $fw-regular);
+    @include display-flex(row, space-between, center);
+    cursor: pointer;
+    width: 100%;
+    padding: 0 $spacing-md;
+    position: absolute;
+    bottom: $spacing-sm;
+    right: 0;
+    left: 0;
+
+    span {
+      transition: $tr-color-short;
+    }
+
+    span:hover {
+      color: $color-light;
+    }
+  }
+
+  &::after {
+    content: "";
+    width: calc(100% - $spacing-xxl * 2);
+    aspect-ratio: 1;
+    top: $spacing-xxl;
+    background-color: $color-primary;
+    position: absolute;
+    opacity: 0.2;
+  }
 }
