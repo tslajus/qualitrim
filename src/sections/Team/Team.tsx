@@ -6,7 +6,7 @@ type Props = {};
 
 const renderedMembers = data.members.map((member) => {
   return (
-    <div className="team__members">
+    <div className="team__members" key={member.id}>
       <TeamMemberBox data={member} />
     </div>
   );

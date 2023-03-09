@@ -54,3 +54,31 @@
   gap: $gap;
   flex-wrap: $wrap;
 }
+
+@mixin width-height(
+  $width,
+  $height: $width,
+  $max-width: null,
+  $max-height: null,
+  $min-width: null,
+  $min-height: null
+) {
+  width: $width;
+  height: $height;
+
+  @if $max-width != null {
+    max-width: $max-width;
+  }
+
+  @if $max-height != null {
+    max-height: $max-height;
+  }
+
+  @if $min-width != null {
+    min-width: $min-width;
+  }
+
+  @if $min-height != null {
+    min-height: $min-height;
+  }
+}
