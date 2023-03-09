@@ -26,7 +26,13 @@
   }
 }
 
-@mixin font-style($family, $color, $size, $weight, $space: $ls-small) {
+@mixin font-style(
+  $family: $ff-body,
+  $color: $color-dark,
+  $size: $fs-paragraph,
+  $weight: $fw-regular,
+  $space: $ls-small
+) {
   font-family: $family;
   color: $color;
   font-size: $size;
