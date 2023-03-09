@@ -1,5 +1,6 @@
 .testimonials-box {
   @include display-flex(column, space-between, center, $spacing-xxl);
+
   height: 76rem;
   background-color: $color-tertiary;
   z-index: $z5;

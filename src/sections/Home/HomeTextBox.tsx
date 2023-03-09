@@ -1,5 +1,6 @@
 import data from "@/data/homeData.json";
 import { makeUpperCase } from "@/utils";
+import { TextBlock } from "@/layouts";
 import { Button, LearnMore } from "@/components";
 
 const heading = makeUpperCase(data.heading);

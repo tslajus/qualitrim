@@ -1,5 +1,6 @@
 import { CSSProperties } from "react";
 import { LearnMore } from "../";
+import { TextBlock } from "@/layouts";
 
 type Props = {
   data: {

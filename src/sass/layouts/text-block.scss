@@ -1,0 +1,7 @@
+.tb {
+  @include display-flex(column, start, space-between, $spacing-lg);
+}
+
+.tb--narrow {
+  @include width-height(60%);
+}
