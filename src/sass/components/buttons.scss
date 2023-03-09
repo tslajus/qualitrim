@@ -1,6 +1,7 @@
 @import "../utilities/layers.scss";
 
 .button {
+  @include font-style($ff-heading, $color-light, $fs-paragraph-big, $fw-light);
   background-color: $color-secondary;
   padding: $spacing-xs $spacing-md;
   cursor: pointer;

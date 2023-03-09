@@ -1,0 +1,67 @@
+{
+  "heading": "Hundreds of satisfied clients",
+  "paragraph": "We take pride in having served millions of satisfied clients over the years, each leaving with a sharp and dapper look. Our skilled barbers are dedicated to providing a grooming experience that exceeds expectations, resulting in a satisfied customer base. Come in and join the millions of happy clients looking sharp with us.",
+  "CTA": "Join",
+  "testimonials": [
+    {
+      "id": "ct01",
+      "name": "David",
+      "text": "I've been coming to this barber shop for over a year now, and I always appreciate the level of professionalism and care they put into their work. They take the time to listen to what I want, and they're not afraid to give suggestions if I'm not sure what I want. I always leave feeling like a new person, and I can't recommend them enough.",
+      "img": "David.jpg"
+    },
+    {
+      "id": "ct02",
+      "name": "Jayden",
+      "text": "I recently moved to the area and was in desperate need of a good barber. Luckily, I stumbled upon this gem of a barber shop. The atmosphere is warm and inviting, and the staff are incredibly talented. I always leave feeling like a new man, and I've never had a bad experience here.",
+      "img": "Jayden.jpg"
+    },
+    {
+      "id": "ct03",
+      "name": "Lucas",
+      "text": "This is hands down the best barber shop around. The staff are all incredibly talented and personable, and the atmosphere is welcoming and relaxed. I always look forward to my appointments here, and I always leave feeling like a new person.",
+      "img": "Lucas.jpg"
+    },
+    {
+      "id": "ct04",
+      "name": "Christopher",
+      "text": "I've been to a lot of barber shops in my day, but this one is by far the best. The staff are all incredibly talented and knowledgeable, and they always take the time to make sure I'm happy with my cut. I never feel rushed or like they're trying to get me out of the chair as quickly as possible. This is the only place I'll go from now on.",
+      "img": "Christopher.jpg"
+    },
+    {
+      "id": "ct05",
+      "name": "Ben",
+      "text": "As someone who's always been nervous about getting their hair cut, I can confidently say that this barber shop has changed my life. The staff are friendly and welcoming, and they always make sure I'm comfortable before starting. I've never felt rushed or like my concerns weren't being heard. If you're looking for a reliable and trustworthy place to get your hair cut, look no further.",
+      "img": "Ben.jpg"
+    },
+    {
+      "id": "ct06",
+      "name": "Hunter",
+      "text": "I'm a student on a budget, so I was thrilled to find out that this barber shop offers great prices without sacrificing quality. The staff are all incredibly talented and professional, and they always make sure I'm happy with my cut before I leave. I'll definitely be coming back!",
+      "img": "Hunter.jpg"
+    },
+    {
+      "id": "ct07",
+      "name": "Cameron",
+      "text": "This barber shop is a hidden gem. The staff are all highly skilled and knowledgeable, and they really take the time to listen to what I want. I always leave feeling like I got a great cut and a great experience. Highly recommend!",
+      "img": "Cameron.jpg"
+    },
+    {
+      "id": "ct08",
+      "name": "Booker",
+      "text": "I'm not usually one to leave reviews, but I had to say something about this amazing barber shop. The staff are all so friendly and skilled, and they always make me feel comfortable and relaxed. I've never had a bad haircut here, and I always recommend this place to anyone who asks.",
+      "img": "Booker.jpg"
+    },
+    {
+      "id": "ct09",
+      "name": "Adam",
+      "text": "I love the atmosphere at this barber shop. It's not only a place to get your hair cut, but it's also a place to catch up with friends and relax. The staff are all so friendly and welcoming, and I always leave feeling refreshed and happy. If you're looking for a great haircut and a great experience, this is the place to go.",
+      "img": "Adam.jpg"
+    },
+    {
+      "id": "ct10",
+      "name": "Tyler",
+      "text": "I'm always impressed by the attention to detail at this barber shop. The staff really take the time to ensure that every hair is in place, and they always make sure I'm satisfied before I leave. I'm a loyal customer for life!",
+      "img": "Tyler.jpg"
+    }
+  ]
+}
