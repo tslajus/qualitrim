@@ -1,0 +1,52 @@
+.message-form {
+  @include display-flex(column, start, start, $spacing-md);
+  @include width-height(100%);
+
+  &__element {
+    @include font-style(
+      $ff-heading,
+      $color-dark-tint,
+      $fs-paragraph,
+      $fw-light
+    );
+
+    background-color: $color-light;
+    padding: $spacing-sm;
+
+    &::placeholder {
+      color: $color-tertiary;
+    }
+
+    &:focus {
+      outline: none;
+      border: 3px solid $color-primary;
+
+      &::placeholder {
+        visibility: hidden;
+      }
+    }
+
+    &:valid {
+      border: 3px solid $color-tertiary;
+    }
+  }
+
+  input {
+    @include width-height(100%, $spacing-xl);
+  }
+
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    min-height: 25rem;
+    height: auto;
+    resize: none;
+    flex: 1;
+  }
+
+  .required-field {
+    &:invalid {
+      border: 3px solid $color-secondary;
+    }
+  }
+}
