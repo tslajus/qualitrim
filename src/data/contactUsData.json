@@ -1,0 +1,16 @@
+{
+  "heading": "Your perfect look starts here",
+  "paragraph": "We believe that everyone deserves to look and feel their best. Whether you're looking for a classic cut or a trendy new style, we have the skills and expertise to make it happen. Contact us now to start your journey towards your best look yet - we can't wait to help you look and feel your best!",
+  "CTA": "Submit",
+  "shadow": "Quality",
+  "gallery": [
+    { "id": "g001", "img": "Qualitrim_001.jpg" },
+    { "id": "g002", "img": "Qualitrim_002.jpg" },
+    { "id": "g003", "img": "Qualitrim_003.jpg" },
+    { "id": "g004", "img": "Qualitrim_004.jpg" },
+    { "id": "g005", "img": "Qualitrim_005.jpg" },
+    { "id": "g006", "img": "Qualitrim_006.jpg" },
+    { "id": "g007", "img": "Qualitrim_007.jpg" },
+    { "id": "g008", "img": "Qualitrim_008.jpg" }
+  ]
+}

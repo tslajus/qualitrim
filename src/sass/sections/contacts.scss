@@ -1,0 +1,41 @@
+.contacts {
+  @include display-flex(column, center, center);
+  @include width-height(100%);
+  background-color: $color-dark;
+  padding: $spacing-5xl;
+
+  &__container {
+    @include width-height(100%, 100%);
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: $spacing-5xl;
+  }
+
+  &__form {
+    @include display-flex(column, space-between, start, $spacing-4xl);
+    @include width-height(100%, 100%);
+  }
+  &__gallery {
+    @include display-flex(row, center, start);
+    @include width-height(100%, 100%);
+
+    position: relative;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-shadow {
+      font-size: $fs-4xl;
+      position: absolute;
+      bottom: -6rem;
+      transition: $tr-all-long;
+    }
+
+    &:hover .contacts__gallery-shadow {
+      color: $color-primary;
+      opacity: 0.9;
+    }
+  }
+}

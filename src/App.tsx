@@ -1,5 +1,5 @@
 import { Header, Footer } from "./layouts";
-import { Home, Benefits, Clients, Team, Form } from "./sections";
+import { Home, Benefits, Clients, Team, ContactUs } from "./sections";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Benefits />
       <Clients />
       <Team />
-      <Form />
+      <ContactUs />
       <Footer />
     </>
   );
