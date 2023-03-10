@@ -2,7 +2,7 @@
   @include display-flex(column, center, center);
   @include width-height(100%);
   background-color: $color-dark;
-  padding: $spacing-5xl;
+  padding: $spacing-5xl $spacing-5xl $spacing-10xl;
 
   &__container {
     @include width-height(100%, 100%);

@@ -37,8 +37,8 @@ $ls-small: 0.1em;
   line-height: 1.75;
 
   &--light {
-    font-family: $ff-heading;
-    font-weight: $fw-light;
+    @include font-style($ff-heading, "", "", $fw-light);
+    line-height: 1;
   }
 }
 
@@ -73,6 +73,7 @@ $ls-small: 0.1em;
   }
 
   &--no-hover {
+    cursor: auto;
     &:hover {
       color: $color-primary;
     }

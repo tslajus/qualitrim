@@ -1,0 +1,48 @@
+.footer {
+  @include display-flex(row, space-between, stretch, $spacing-lg);
+  @include width-height(100%);
+  background-color: $color-dark-tint;
+  padding: $spacing-5xl;
+
+  &__brand,
+  &__contacts,
+  &__navigation {
+    @include display-flex(column, space-between, space-between, $spacing-lg);
+    @include width-height(auto, auto);
+  }
+
+  &__icons {
+    cursor: pointer;
+    font-size: $fs-xs;
+
+    & > * {
+      margin-right: $spacing-xs;
+      transition: $tr-color-short;
+
+      &:hover {
+        color: $color-light;
+      }
+    }
+  }
+
+  &__social {
+    @include display-flex(column, start, start, $spacing-xs);
+  }
+
+  &__contacts {
+    &--links {
+      @include display-flex(column, start, start, $spacing-xs);
+
+      a {
+        color: $color-primary;
+        transition: $tr-color-short;
+
+        &:hover,
+        &:active,
+        &:visited {
+          color: $color-light;
+        }
+      }
+    }
+  }
+}

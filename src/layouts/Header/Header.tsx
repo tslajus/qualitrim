@@ -28,9 +28,8 @@ function Header({}: Props) {
   return (
     <div className={`header ${!onTop ? "header--on-scroll" : ""}`}>
       <div className="header__inner">
-        <div className="logo">
-          <Logo />
-        </div>
+        <Logo />
+
         {renderedNav}
       </div>
     </div>
