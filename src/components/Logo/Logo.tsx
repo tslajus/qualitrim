@@ -3,10 +3,10 @@ import data from "@/data/navData.json";
 
 type Props = {};
 
-const logo = makeUpperCase(data.logo);
+const logo = makeUpperCase(data.name);
 
 function Logo({}: Props) {
-  return <div>{logo} </div>;
+  return <div className="logo">{logo} </div>;
 }
 
 export default Logo;
