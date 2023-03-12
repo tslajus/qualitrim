@@ -1,11 +1,9 @@
 import { makeUpperCase } from "@/utils";
 import data from "@/data/navData.json";
 
-type Props = {};
-
 const logo = makeUpperCase(data.name);
 
-function Logo({}: Props) {
+function Logo() {
   return <div className="logo">{logo} </div>;
 }
 

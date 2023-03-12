@@ -5,11 +5,9 @@ type Props = {
 
 function Button({ children, ...props }: Props) {
   return (
-    <div>
-      <button className="button " {...props}>
-        {children}
-      </button>
-    </div>
+    <button className="button " {...props}>
+      {children}
+    </button>
   );
 }
 

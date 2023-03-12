@@ -1,7 +1,6 @@
-import data from "@/data/homeData.json";
 import { Heading, Paragraph, Button, LearnMore } from "@/components";
 
-function HomeTextBox() {
+function HomeTextBox({ data }: HomeData) {
   return (
     <div className="home__text-block">
       <div className="home__heading-box">

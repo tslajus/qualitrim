@@ -1,16 +1,12 @@
 import data from "@/data/clientsData.json";
 import { TestimonialsBox } from "@/components";
-import ClientsTextBox from "./ClientsTextBox";
+import ClientsHeader from "./parts/ClientsHeader";
 
-type Props = {};
-
-function Clients({}: Props) {
+function Clients() {
   return (
     <div className="clients">
       <TestimonialsBox data={data.testimonials} />
-      <div className="clients__text-box">
-        <ClientsTextBox />
-      </div>
+      <ClientsHeader data={data} />
       <div className="clients__background" />
     </div>
   );

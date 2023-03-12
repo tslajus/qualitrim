@@ -7,7 +7,7 @@ import {
 import { Paragraph } from "../";
 
 type Props = {
-  data: { id: string; name: string; text: string; img: string }[];
+  data: Testimonials;
 };
 
 function TestimonialsBox({ data }: Props) {

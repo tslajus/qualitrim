@@ -1,20 +1,19 @@
-import data from "@/data/benefitsData.json";
 import { TextBlock } from "@/layouts";
 import { Heading, Paragraph } from "@/components";
 
-function BenefitsTextBox() {
+function TeamTextBox({ data }: TeamData) {
   return (
     <TextBlock fullWidth={false}>
       <Heading
         text={data.heading}
         h="h2"
-        color="dark"
+        color="tertiary"
         firstWords={1}
-        color2="secondary"
+        color2="primary"
       />
-      <Paragraph color="dark">{data.paragraph}</Paragraph>
+      <Paragraph color="light">{data.paragraph}</Paragraph>
     </TextBlock>
   );
 }
 
-export default BenefitsTextBox;
+export default TeamTextBox;

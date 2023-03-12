@@ -5,9 +5,7 @@ import NavDesktop from "./NavDesktop";
 import NavMobile from "./NavMobile";
 import { Logo } from "@/components";
 
-type Props = {};
-
-function Header({}: Props) {
+function Header() {
   const tabLand = portSize.tabLand;
   const navLinks = data.navLinks;
 
@@ -21,18 +19,15 @@ function Header({}: Props) {
   ));
 
   const renderedNav = isSmallScreen ? (
-    <NavMobile links={renderedLinks} />
+    <NavMobile links={renderedLinks} button={data.CTA} />
   ) : (
-    <NavDesktop links={renderedLinks} />
+    <NavDesktop links={renderedLinks} button={data.CTA} />
   );
 
   return (
     <div className={`header ${!onTop ? "header--on-scroll" : ""}`}>
-      <div className="header__inner">
-        <Logo />
-
-        {renderedNav}
-      </div>
+      <Logo />
+      {renderedNav}
     </div>
   );
 }
