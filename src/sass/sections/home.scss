@@ -2,7 +2,6 @@
   @include display-flex(row, center, center, $spacing-xxl);
   @include width-height(100%, 100vh);
 
-  background-color: $color-dark;
   padding: $spacing-10xl $spacing-5xl $spacing-5xl;
 
   &__text-block {

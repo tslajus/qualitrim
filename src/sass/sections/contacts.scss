@@ -1,7 +1,6 @@
 .contacts {
   @include display-flex(row, space-between, start, $spacing-5xl);
   @include width-height(100%);
-  background-color: $color-dark;
   padding: $spacing-5xl $spacing-5xl $spacing-10xl;
 
   &__form {

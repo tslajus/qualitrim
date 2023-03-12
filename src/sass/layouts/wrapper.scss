@@ -1,0 +1,6 @@
+.wrapper {
+  @include display-flex(column);
+  @include width-height($sz-wrapper, auto);
+  margin: 0 auto;
+  background-color: $color-dark;
+}

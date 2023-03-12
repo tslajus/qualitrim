@@ -8,6 +8,18 @@ type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 type Colors = "primary" | "secondary" | "tertiary" | "light" | "dark";
 
+type ScrollBtn = {
+  text: string;
+  scrollTo: string;
+};
+
+type Testimonials = {
+  id: string;
+  name: string;
+  text: string;
+  img: string;
+}[];
+
 type BenefitsData = {
   data: {
     heading: string;
@@ -19,22 +31,16 @@ type BenefitsData = {
       btn: string;
       icon: string;
       background: string;
+      scrollTo: string;
     }[];
   };
 };
-
-type Testimonials = {
-  id: string;
-  name: string;
-  text: string;
-  img: string;
-}[];
 
 type ClientsData = {
   data: {
     heading: string;
     paragraph: string;
-    CTA: string;
+    CTA: ScrollBtn;
     testimonials: Testimonials;
   };
 };
@@ -55,7 +61,7 @@ type HomeData = {
     subheading: string;
     shadow: string;
     paragraph: string;
-    CTA: string;
+    CTA: ScrollBtn;
     link: string;
   };
 };
@@ -64,7 +70,7 @@ type NavData = {
   data: {
     name: string;
     navLinks: { id: string; name: string }[];
-    CTA: string;
+    CTA: ScrollBtn;
     tagline: string;
     contacts: {
       heading: string;

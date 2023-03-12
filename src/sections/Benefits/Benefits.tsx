@@ -4,7 +4,7 @@ import BenefitsFeatures from "./parts/BenefitsFeatures";
 
 function Benefits() {
   return (
-    <div className="benefits">
+    <div id="benefits" className="benefits">
       <BenefitsHeader data={data} />
       <BenefitsFeatures data={data} />
     </div>
