@@ -1,19 +1,17 @@
 import data from "@/data/benefitsData.json";
-import { splitHeading } from "@/utils";
 import { TextBlock } from "@/layouts";
-import { Paragraph } from "@/components";
+import { Heading, Paragraph } from "@/components";
 
-type Props = {};
-
-function BenefitsTextBox({}: Props) {
-  const [headingStart, headingEnd] = splitHeading(data.heading, 1);
-
+function BenefitsTextBox() {
   return (
     <TextBlock fullWidth={false}>
-      <h2 className="heading color--dark">
-        <span className="heading color--secondary">{headingStart} </span>
-        {headingEnd}
-      </h2>
+      <Heading
+        text={data.heading}
+        h="h2"
+        color="dark"
+        firstWords={1}
+        color2="secondary"
+      />
       <Paragraph color="dark">{data.paragraph}</Paragraph>
     </TextBlock>
   );

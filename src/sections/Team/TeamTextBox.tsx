@@ -1,19 +1,17 @@
 import data from "@/data/teamData.json";
-import { splitHeading } from "@/utils";
 import { TextBlock } from "@/layouts";
-import { Paragraph } from "@/components";
+import { Heading, Paragraph } from "@/components";
 
-type Props = {};
-
-function TeamTextBox({}: Props) {
-  const [headingStart, headingEnd] = splitHeading(data.heading, 1);
-
+function TeamTextBox() {
   return (
     <TextBlock fullWidth={false}>
-      <h2 className="heading color--primary">
-        <span className="heading color--tertiary">{headingStart} </span>
-        {headingEnd}
-      </h2>
+      <Heading
+        text={data.heading}
+        h="h2"
+        color="tertiary"
+        firstWords={1}
+        color2="primary"
+      />
       <Paragraph color="light">{data.paragraph}</Paragraph>
     </TextBlock>
   );

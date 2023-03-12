@@ -1,24 +1,19 @@
 .contacts {
-  @include display-flex(column, center, center);
+  @include display-flex(row, space-between, start, $spacing-5xl);
   @include width-height(100%);
   background-color: $color-dark;
   padding: $spacing-5xl $spacing-5xl $spacing-10xl;
 
-  &__container {
-    @include width-height(100%, 100%);
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: $spacing-5xl;
-  }
-
   &__form {
     @include display-flex(column, space-between, start, $spacing-4xl);
     @include width-height(100%, 100%);
+    flex: 3;
   }
   &__gallery {
     @include display-flex(row, center, start);
     @include width-height(100%, 100%);
 
+    flex: 2;
     position: relative;
 
     img {

@@ -1,29 +1,25 @@
 import data from "@/data/contactUsData.json";
 import ContactUsGallery from "./ContactUsGallery";
-import { splitHeading } from "@/utils";
 import { TextBlock } from "@/layouts";
-import { MessageForm, Paragraph } from "@/components";
+import { MessageForm, Heading, Paragraph } from "@/components";
 
-type Props = {};
-
-function Form({}: Props) {
-  const [headingStart, headingEnd] = splitHeading(data.heading, 3);
-
+function Form() {
   return (
     <div className="contacts">
-      <div className="contacts__container">
-        <div className="contacts__form">
-          <TextBlock fullWidth>
-            <h2 className="heading">
-              {headingStart}
-              <span className="color--tertiary"> {headingEnd}</span>
-            </h2>
-            <Paragraph color="light">{data.paragraph}</Paragraph>
-          </TextBlock>
-          <MessageForm CTA={data.CTA} />
-        </div>
-        <ContactUsGallery data={data.gallery} shadow={data.shadow} />
+      <div className="contacts__form">
+        <TextBlock fullWidth>
+          <Heading
+            text={data.heading}
+            h="h2"
+            color="tertiary"
+            firstWords={3}
+            color2="primary"
+          />
+          <Paragraph color="light">{data.paragraph}</Paragraph>
+        </TextBlock>
+        <MessageForm CTA={data.CTA} />
       </div>
+      <ContactUsGallery data={data.gallery} shadow={data.shadow} />
     </div>
   );
 }

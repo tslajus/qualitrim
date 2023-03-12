@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { LearnMore, Paragraph } from "../";
+import { Paragraph, LearnMore } from "../";
 
 type Props = {
   data: {
