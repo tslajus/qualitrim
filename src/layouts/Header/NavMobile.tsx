@@ -1,6 +1,6 @@
+import data from "@/data/navData.json";
 import { useState } from "react";
 import { HamburgerButton, Button } from "@/components";
-import data from "@/data/navData.json";
 
 type Props = {
   links: React.ReactNode;

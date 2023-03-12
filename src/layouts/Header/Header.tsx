@@ -1,4 +1,5 @@
-import { useMediaQuery, usePageContext } from "@/hooks";
+import data from "@/data/navData.json";
+import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 import { useOnTopState } from "@/utils";
 import NavDesktop from "./NavDesktop";
 import NavMobile from "./NavMobile";
@@ -7,8 +8,8 @@ import { Logo } from "@/components";
 type Props = {};
 
 function Header({}: Props) {
-  const { tabLand } = usePageContext("portSize");
-  const navLinks = usePageContext("navLinks");
+  const tabLand = portSize.tabLand;
+  const navLinks = data.navLinks;
 
   const isSmallScreen = useMediaQuery(tabLand);
   const onTop = useOnTopState();

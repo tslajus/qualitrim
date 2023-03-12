@@ -1,6 +1,5 @@
 import { CSSProperties } from "react";
-import { LearnMore } from "../";
-import { TextBlock } from "@/layouts";
+import { LearnMore, Paragraph } from "../";
 
 type Props = {
   data: {
@@ -24,7 +23,7 @@ function FeatureBox({ data }: Props) {
 
       <div className="feature__text">
         <h4 className="text-narrow">{data.title}</h4>
-        <p className="paragraph color--light">{data.paragraph}</p>
+        <Paragraph color="light">{data.paragraph}</Paragraph>
         <LearnMore />
       </div>
     </div>

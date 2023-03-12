@@ -1,8 +1,8 @@
 import data from "@/data/contactUsData.json";
+import ContactUsGallery from "./ContactUsGallery";
 import { splitHeading } from "@/utils";
 import { TextBlock } from "@/layouts";
-import { MessageForm } from "@/components";
-import ContactUsGallery from "./ContactUsGallery";
+import { MessageForm, Paragraph } from "@/components";
 
 type Props = {};
 
@@ -18,7 +18,7 @@ function Form({}: Props) {
               {headingStart}
               <span className="color--tertiary"> {headingEnd}</span>
             </h2>
-            <p className="paragraph color--light">{data.paragraph}</p>
+            <Paragraph color="light">{data.paragraph}</Paragraph>
           </TextBlock>
           <MessageForm CTA={data.CTA} />
         </div>

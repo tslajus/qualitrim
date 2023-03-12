@@ -1,6 +1,7 @@
 import data from "@/data/benefitsData.json";
 import { splitHeading } from "@/utils";
 import { TextBlock } from "@/layouts";
+import { Paragraph } from "@/components";
 
 type Props = {};
 
@@ -13,7 +14,7 @@ function BenefitsTextBox({}: Props) {
         <span className="heading color--secondary">{headingStart} </span>
         {headingEnd}
       </h2>
-      <p className="paragraph color--dark">{data.paragraph}</p>
+      <Paragraph color="dark">{data.paragraph}</Paragraph>
     </TextBlock>
   );
 }

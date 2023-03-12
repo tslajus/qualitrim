@@ -6,13 +6,10 @@
 
   &__members {
     @include width-height(100%, 100%);
-
-    &-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: $spacing-lg;
-      overflow: hidden;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: $spacing-lg;
+    overflow: hidden;
 
     &-profile {
       @include display-flex(column, center, center, $spacing-lg);

@@ -1,16 +1,13 @@
-import { useMediaQuery } from "@/hooks";
-import { usePageContext } from "@/hooks";
+import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 
 type Props = {};
 
 function HomeIllustration({}: Props) {
-  const { mobile, tabPort, tabLand, desktopSmall, desktopBig } =
-    usePageContext("portSize");
-  const isMobile = useMediaQuery(mobile);
-  const isTabPort = useMediaQuery(tabPort);
-  const isTabLand = useMediaQuery(tabLand);
-  const isDesktopSmall = useMediaQuery(desktopSmall);
-  const isDesktopBIg = useMediaQuery(desktopBig);
+  const isMobile = portSize.mobile;
+  const isTabPort = portSize.tabPort;
+  const isTabLand = portSize.tabLand;
+  const isDesktopSmall = portSize.desktopSmall;
+  const isDesktopBIg = portSize.desktopBig;
 
   const renderedImg = (
     <img src="src\assets\home\home_img_720.png" alt="bearded man" />

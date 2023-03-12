@@ -1,5 +1,21 @@
 import { useEffect, useState } from "react";
 
+type portSize = {
+  mobile: string;
+  tabPort: string;
+  tabLand: string;
+  desktopSmall: string;
+  desktopBig: string;
+};
+
+const portSize = {
+  mobile: "(max-width: 350px)",
+  tabPort: "(max-width: 768px)",
+  tabLand: "(max-width: 1024px)",
+  desktopSmall: "(max-width: 1280px)",
+  desktopBig: "(max-width: 1440px)",
+};
+
 function useMediaQuery(query: string): boolean {
   const getMatches = (query: string): boolean => {
     if (typeof window !== "undefined") {
@@ -37,4 +53,5 @@ function useMediaQuery(query: string): boolean {
   return matches;
 }
 
+export { portSize };
 export default useMediaQuery;

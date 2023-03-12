@@ -1,6 +1,7 @@
 import data from "@/data/teamData.json";
 import { splitHeading } from "@/utils";
 import { TextBlock } from "@/layouts";
+import { Paragraph } from "@/components";
 
 type Props = {};
 
@@ -13,7 +14,7 @@ function TeamTextBox({}: Props) {
         <span className="heading color--tertiary">{headingStart} </span>
         {headingEnd}
       </h2>
-      <p className="paragraph color--light">{data.paragraph}</p>
+      <Paragraph color="light">{data.paragraph}</Paragraph>
     </TextBlock>
   );
 }

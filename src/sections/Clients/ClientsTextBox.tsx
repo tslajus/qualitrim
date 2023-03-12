@@ -1,7 +1,7 @@
 import data from "@/data/clientsData.json";
 import { splitHeading } from "@/utils";
-import { Button } from "@/components";
 import { TextBlock } from "@/layouts";
+import { Button, Paragraph } from "@/components";
 
 type Props = {};
 
@@ -15,7 +15,7 @@ function ClientsTextBox({}: Props) {
           <span className="heading color--dark">{headingStart} </span>
           {headingEnd}
         </h2>
-        <p className="paragraph color--dark">{data.paragraph}</p>
+        <Paragraph color="dark">{data.paragraph}</Paragraph>
         <div>
           <Button>{data.CTA}</Button>
         </div>
