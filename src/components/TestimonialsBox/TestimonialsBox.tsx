@@ -4,9 +4,10 @@ import {
   GoChevronRight as IconRight,
   GoChevronLeft as IconLeft,
 } from "react-icons/go";
+import { Paragraph } from "../";
 
 type Props = {
-  data: { id: string; name: string; text: string; img: string }[];
+  data: Testimonials;
 };
 
 function TestimonialsBox({ data }: Props) {
@@ -28,22 +29,19 @@ function TestimonialsBox({ data }: Props) {
   }, [clientNumber]);
 
   return (
-    <div className="testimonials-box paragraph color--light">
+    <div className="testimonials-box">
       <div className="testimonials-box__content ">
         <img
           src={`src/assets/clients/${client.img}`}
           alt={`image of our customer ${client.name}`}
         />
-        <p>{`"${client.text}"`}</p>
+        <Paragraph color={"light"}>{`"${client.text}"`}</Paragraph>
       </div>
-
-      <p>- {makeUpperCase(client.name)} -</p>
+      <Paragraph color="light">- {makeUpperCase(client.name)} -</Paragraph>
 
       <div className="testimonials-box__arrows">
         <IconLeft onClick={() => handleClientNumber("back")} />
         <IconRight onClick={() => handleClientNumber("next")} />
-        {/* <span >&larr;</span> */}
-        {/* <span onClick={() => handleClientNumber("next")}>&rarr;</span> */}
       </div>
     </div>
   );

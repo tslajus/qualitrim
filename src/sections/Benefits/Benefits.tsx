@@ -1,22 +1,12 @@
-import BenefitsTextBox from "./BenefitsTextBox";
-import { FeatureBox } from "@/components";
-
 import data from "@/data/benefitsData.json";
+import BenefitsHeader from "./parts/BenefitsHeader";
+import BenefitsFeatures from "./parts/BenefitsFeatures";
 
-type Props = {};
-
-const renderedFeature = data.boxes.map((feature) => {
-  return <FeatureBox key={feature.id} data={feature} />;
-});
-
-function Benefits({}: Props) {
+function Benefits() {
   return (
     <div className="benefits">
-      <BenefitsTextBox />
-
-      <div>
-        <div className="benefits__features">{renderedFeature}</div>
-      </div>
+      <BenefitsHeader data={data} />
+      <BenefitsFeatures data={data} />
     </div>
   );
 }

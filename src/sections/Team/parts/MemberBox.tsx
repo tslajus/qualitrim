@@ -1,4 +1,5 @@
 import { makeUpperCase } from "@/utils";
+import { Paragraph } from "@/components";
 
 type Props = {
   data: {
@@ -18,7 +19,9 @@ function TeamMemberBox({ data }: Props) {
       <span className="paragraph color--primary">
         - {makeUpperCase(data.name)} -
       </span>
-      <div className="team__members-info">{data.text}</div>
+      <div className="team__members-info">
+        <Paragraph color="light">{data.text}</Paragraph>
+      </div>
     </div>
   );
 }

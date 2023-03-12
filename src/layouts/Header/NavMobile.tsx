@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { HamburgerButton, Button } from "@/components";
-import data from "@/data/navData.json";
 
 type Props = {
   links: React.ReactNode;
+  button: string;
 };
 
-function NavMobile({ links }: Props) {
+function NavMobile({ links, button }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -22,7 +22,7 @@ function NavMobile({ links }: Props) {
       {isMenuOpen && (
         <div className="header__mobile">
           <div className="header__mobile-links">{links}</div>
-          <Button>{data.CTA}</Button>
+          <Button>{button}</Button>
         </div>
       )}
     </>

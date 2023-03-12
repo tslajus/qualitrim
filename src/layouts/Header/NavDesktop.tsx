@@ -1,18 +1,15 @@
-import { usePageContext } from "@/hooks";
 import { Button } from "@/components";
-import data from "@/data/navData.json";
 
 type Props = {
   links: React.ReactNode;
+  button: string;
 };
 
-function NavDesktop({ links }: Props) {
-  const navLinks = usePageContext("navLinks");
-
+function NavDesktop({ links, button }: Props) {
   return (
     <div className="header__desktop">
       <div className="header__desktop-links">{links}</div>
-      <Button>{data.CTA}</Button>
+      <Button>{button}</Button>
     </div>
   );
 }

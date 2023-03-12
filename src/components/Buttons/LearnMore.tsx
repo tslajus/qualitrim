@@ -1,6 +1,4 @@
-type Props = {};
-
-function LearnMore({}: Props) {
+function LearnMore() {
   return <div className="text-narrow text-narrow--link">Learn more</div>;
 }
 

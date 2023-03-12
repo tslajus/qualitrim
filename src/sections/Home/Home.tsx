@@ -1,15 +1,12 @@
-import HomeTextBox from "./HomeTextBox";
-import HomeIllustration from "./HomeIllustration";
+import data from "@/data/homeData.json";
+import HomeTextBox from "./parts/HomeTextBox";
+import HomeIllustration from "./parts/HomeIllustration";
 
-type Props = {};
-
-function Home({}: Props) {
+function Home() {
   return (
     <div className="home">
-      <div className="home__container">
-        <HomeTextBox />
-        <HomeIllustration />
-      </div>
+      <HomeTextBox data={data} />
+      <HomeIllustration />
     </div>
   );
 }

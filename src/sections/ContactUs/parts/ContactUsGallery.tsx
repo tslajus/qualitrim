@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { makeUpperCase } from "@/utils";
 
-type Props = { data: { id: string; img: string }[]; shadow: string };
+type Props = { gallery: { id: string; img: string }[]; shadow: string };
 
-function ContactUsGallery({ data, shadow }: Props) {
+function ContactUsGallery({ gallery, shadow }: Props) {
   const [imageNumber, setImageNumber] = useState(1);
-  const image = data[imageNumber - 1].img;
+  const image = gallery[imageNumber - 1].img;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setImageNumber(imageNumber === data.length ? 1 : imageNumber + 1);
+      setImageNumber(imageNumber === gallery.length ? 1 : imageNumber + 1);
     }, 3000);
 
     return () => clearInterval(intervalId);
