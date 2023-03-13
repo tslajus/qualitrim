@@ -1,22 +1,46 @@
 import { useState, useEffect, useRef } from "react";
 import Button from "../Buttons/Button";
 
-type Props = {
-  CTA: string;
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
 };
 
-function MessageForm({ CTA }: Props) {
+function MessageForm({ CTA }: { CTA: string }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [emptyFieldSubmitted, setEmptyFieldSubmitted] = useState(false);
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleSumbit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    if (!formData.name || !formData.email || !formData.message) {
+      setEmptyFieldSubmitted(true);
+      return;
+    } else {
+      setFormSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    }
   };
 
-  const handleEmptyFields = () => {
-    setEmptyFieldSubmitted(true);
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
 
   useEffect(() => {
@@ -38,21 +62,25 @@ function MessageForm({ CTA }: Props) {
         className={`message-form__element ${
           emptyFieldSubmitted ? "required-field" : ""
         }`}
+        onChange={handleChange}
+        value={formData.name}
         type="text"
         id="name"
         name="name"
-        placeholder="NAME"
+        placeholder={!formSubmitted ? "NAME" : "Thanks for your message!"}
         required
-      ></input>
+      />
 
       <input
         className={`message-form__element ${
           emptyFieldSubmitted ? "required-field" : ""
         }`}
+        onChange={handleChange}
+        value={formData.email}
         type="email"
         id="email"
         name="email"
-        placeholder="EMAIL"
+        placeholder={!formSubmitted ? "EMAIL" : "We'll get back to you soon."}
         required
       ></input>
 
@@ -60,12 +88,18 @@ function MessageForm({ CTA }: Props) {
         className={`message-form__element ${
           emptyFieldSubmitted ? "required-field" : ""
         }`}
+        onChange={handleChange}
+        value={formData.message}
         id="message"
         name="message"
-        placeholder="MESSAGE"
+        placeholder={
+          !formSubmitted
+            ? "MESSAGE"
+            : "Let us know if you have any more questions."
+        }
         required
       ></textarea>
-      <Button type="submit" onClick={handleEmptyFields}>
+      <Button type="submit" onClick={handleSumbit}>
         {CTA}
       </Button>
     </form>

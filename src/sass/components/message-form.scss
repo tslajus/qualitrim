@@ -46,7 +46,9 @@
 
   .required-field {
     &:invalid {
-      border: 3px solid $color-secondary;
+      border: 2px solid $color-secondary;
+      background-color: $color-dark-tint;
+      color: $color-light;
     }
   }
 }
