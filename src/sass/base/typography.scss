@@ -68,7 +68,8 @@ $ls-small: 0.1em;
   }
 
   &:hover,
-  &--bold:hover {
+  &--bold:hover,
+  &--active {
     color: $color-light;
   }
 

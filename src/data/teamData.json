@@ -10,9 +10,9 @@
     },
     {
       "id": "tm2",
-      "name": "Michal",
-      "text": "Step into Michal's chair and let his expert hands work their magic. With an exceptional attention to detail and a passion for his craft, he'll give you a cut that's tailored to your unique style and personality.",
-      "img": "Michal.jpg"
+      "name": "Leonardo",
+      "text": "With Leonardo's skilled hands and creative vision, every cut is a masterpiece that highlights your best features. Book now with Leonardo and leave feeling like a true work of art.",
+      "img": "Leonardo.jpg"
     },
     {
       "id": "tm3",
@@ -22,9 +22,9 @@
     },
     {
       "id": "tm4",
-      "name": "Leonardo",
-      "text": "With Leonardo's skilled hands and creative vision, every cut is a masterpiece that highlights your best features. Book now with Leonardo and leave feeling like a true work of art.",
-      "img": "Leonardo.jpg"
+      "name": "Michal",
+      "text": "Step into Michal's chair and let his expert hands work their magic. With an exceptional attention to detail and a passion for his craft, he'll give you a cut that's tailored to your unique style and personality.",
+      "img": "Michal.jpg"
     }
   ]
 }

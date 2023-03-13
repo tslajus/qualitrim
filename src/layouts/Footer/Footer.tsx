@@ -8,7 +8,7 @@ function Footer() {
     <div className="footer">
       <FooterBrand data={data} />
       <FooterContacts data={data} />
-      <FooterNav />
+      <FooterNav data={data} />
     </div>
   );
 }
