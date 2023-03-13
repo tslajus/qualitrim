@@ -1,4 +1,5 @@
 @import "../utilities/colors.scss";
+@import "../utilities/spacers.scss";
 
 *,
 *:before,
@@ -9,6 +10,15 @@
   border: 0;
   vertical-align: baseline;
   text-decoration: none;
+}
+
+:focus-visible {
+  border: $spacing-xs solid;
+  padding: $spacing-xxs;
+  border-style: double;
+  border-color: $color-primary;
+  background-color: $color-dark;
+  outline: none;
 }
 
 html {

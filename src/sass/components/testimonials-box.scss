@@ -41,6 +41,7 @@
   }
 
   &__arrow {
+    @include display-flex(row, center, center);
     @include font-style("", $color-primary, $fs-lg);
     background: none;
   }
