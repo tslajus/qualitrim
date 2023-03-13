@@ -1,11 +1,7 @@
-import { Heading, Paragraph, Button, LearnMore } from "@/components";
 import { scrollToId } from "@/utils";
+import { Heading, Paragraph, Button, LearnMore } from "@/components";
 
 function HomeTextBox({ data }: HomeData) {
-  const handleClick = () => {
-    scrollToId("contact-us");
-  };
-
   return (
     <div className="home__text-block">
       <div className="home__heading-box">
@@ -21,8 +17,10 @@ function HomeTextBox({ data }: HomeData) {
 
       <Paragraph color="primary">{data.paragraph}</Paragraph>
       <div className="home__buttons">
-        <Button onClick={handleClick}>{data.CTA}</Button>
-        <LearnMore onClick={handleClick} />
+        <Button onClick={() => scrollToId(data.CTA.scrollTo)}>
+          {data.CTA.text}
+        </Button>
+        <LearnMore onClick={() => scrollToId(data.CTA.scrollTo)} />
       </div>
     </div>
   );

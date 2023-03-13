@@ -62,7 +62,7 @@ type HomeData = {
     shadow: string;
     paragraph: string;
     CTA: ScrollBtn;
-    link: string;
+    link: ScrollBtn;
   };
 };
 

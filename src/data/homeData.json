@@ -3,6 +3,6 @@
   "subheading": "Quality Cuts & Shaves",
   "shadow": "Quality",
   "paragraph": "From classic haircuts to modern styles and beard trims, our team of skilled professionals is committed to delivering the highest quality service to each and every customer. Step into our welcoming and relaxed atmosphere, where you can sit back, relax, and leave the rest to us.",
-  "CTA": "Lets talk",
-  "link": "Learn more"
+  "CTA": { "text": "Lets talk", "scrollTo": "contact-us" },
+  "link": { "text": "Learn more", "scrollTo": "contact-us" }
 }
