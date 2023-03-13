@@ -11,6 +11,10 @@
     @include width-height(auto, auto);
   }
 
+  &__navigation {
+    align-items: start;
+  }
+
   &__icons {
     cursor: pointer;
     font-size: $fs-xs;

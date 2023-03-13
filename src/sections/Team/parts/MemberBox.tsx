@@ -11,18 +11,21 @@ type Props = {
 
 function TeamMemberBox({ data }: Props) {
   return (
-    <div className="team__members-profile">
+    <article className="team__members-profile">
       <img
         src={`src/assets/team/${data.img}`}
         alt={`image of our team member ${data.name}`}
       />
-      <span className="paragraph color--primary">
+      <span
+        className="paragraph color--primary"
+        aria-label={`team member ${data.name}`}
+      >
         - {makeUpperCase(data.name)} -
       </span>
       <div className="team__members-info">
         <Paragraph color="light">{data.text}</Paragraph>
       </div>
-    </div>
+    </article>
   );
 }
 

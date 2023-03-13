@@ -1,6 +1,6 @@
 import data from "@/data/navData.json";
 import { useContext } from "react";
-import { SectionContext } from "@/context/sectionContext";
+import { SectionContext } from "@/context/SectionContext";
 import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 import { useOnTopState, scrollToId, onEnterViewport } from "@/utils";
 import NavDesktop from "./NavDesktop";
@@ -12,13 +12,13 @@ function Header() {
 
   const navLinks = data.navLinks;
   const renderedLinks = navLinks.map((link: Link) => (
-    <div
+    <button
       onClick={() => scrollToId(link.id)}
       key={link.id}
       className={`link ${link.id === selectedSection && "link--active"}`}
     >
       {link.name}
-    </div>
+    </button>
   ));
 
   const ids = [...navLinks.map((navLink) => navLink.id), "contact-us"];
@@ -35,10 +35,10 @@ function Header() {
   );
 
   return (
-    <div className={`header ${!onTop ? "header--on-scroll" : ""}`}>
+    <header className={`header ${!onTop ? "header--on-scroll" : ""}`}>
       <Logo />
       {renderedNav}
-    </div>
+    </header>
   );
 }
 

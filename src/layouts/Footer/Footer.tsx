@@ -5,11 +5,11 @@ import FooterNav from "./parts/FooterNav";
 
 function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <FooterBrand data={data} />
       <FooterContacts data={data} />
       <FooterNav data={data} />
-    </div>
+    </footer>
   );
 }
 

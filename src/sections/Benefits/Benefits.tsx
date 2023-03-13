@@ -4,10 +4,10 @@ import BenefitsFeatures from "./parts/BenefitsFeatures";
 
 function Benefits() {
   return (
-    <div id="benefits" className="benefits">
+    <section id="benefits" className="benefits">
       <BenefitsHeader data={data} />
       <BenefitsFeatures data={data} />
-    </div>
+    </section>
   );
 }
 

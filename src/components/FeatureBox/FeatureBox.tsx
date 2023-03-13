@@ -19,7 +19,11 @@ function FeatureBox({ data, action }: Props) {
   };
 
   return (
-    <div className="feature" style={backgroundStyle}>
+    <article
+      className="feature"
+      style={backgroundStyle}
+      aria-labelledby={`title-${data.id}`}
+    >
       <img className="feature-icon" src={`src/assets/icons/${data.icon}`} />
 
       <div className="feature__text">
@@ -27,7 +31,7 @@ function FeatureBox({ data, action }: Props) {
         <Paragraph color="light">{data.paragraph}</Paragraph>
         <LearnMore onClick={action} />
       </div>
-    </div>
+    </article>
   );
 }
 

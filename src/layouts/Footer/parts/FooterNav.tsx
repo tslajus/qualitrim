@@ -3,7 +3,7 @@ import { scrollToId } from "@/utils";
 function FooterNav({ data }: NavData) {
   const renderedLinks = data.navLinks.map((link: Link) => {
     return (
-      <div
+      <button
         onClick={() => {
           scrollToId(link.id);
         }}
@@ -11,11 +11,11 @@ function FooterNav({ data }: NavData) {
         className="link"
       >
         {link.name}
-      </div>
+      </button>
     );
   });
 
-  return <div className="footer__navigation ">{renderedLinks}</div>;
+  return <nav className="footer__navigation ">{renderedLinks}</nav>;
 }
 
 export default FooterNav;

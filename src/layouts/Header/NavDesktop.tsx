@@ -8,10 +8,10 @@ type Props = {
 
 function NavDesktop({ links, button }: Props) {
   return (
-    <div className="header__desktop">
+    <nav className="header__desktop">
       <div className="header__desktop-links">{links}</div>
       <Button onClick={() => scrollToId(button.scrollTo)}>{button.text}</Button>
-    </div>
+    </nav>
   );
 }
 

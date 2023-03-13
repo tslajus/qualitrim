@@ -22,7 +22,7 @@ function ContactUsGallery({ gallery, shadow }: Props) {
   return (
     <>
       <div className="contacts__gallery">
-        <div className="contacts__gallery-img">{renderedImg}</div>
+        <figure className="contacts__gallery-img">{renderedImg}</figure>
         <span className="text-shadow contacts__gallery-shadow">
           {makeUpperCase(shadow)}
         </span>

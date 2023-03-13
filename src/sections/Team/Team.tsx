@@ -1,13 +1,13 @@
 import data from "@/data/teamData.json";
-import TeamTextBox from "./parts/TeamTextBox";
+import TeamHeader from "./parts/TeamHeader";
 import TeamMembers from "./parts/TeamMembers";
 
 function Team() {
   return (
-    <div id="team" className="team">
-      <TeamTextBox data={data} />
+    <section id="team" className="team">
+      <TeamHeader data={data} />
       <TeamMembers data={data} />
-    </div>
+    </section>
   );
 }
 
