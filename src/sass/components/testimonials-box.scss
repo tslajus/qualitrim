@@ -40,14 +40,4 @@
       color: $color-light;
     }
   }
-
-  &::after {
-    content: "";
-    width: calc(100% - $spacing-xxl * 2);
-    aspect-ratio: 1;
-    top: $spacing-xxl;
-    background-color: $color-primary;
-    position: absolute;
-    opacity: 0.2;
-  }
 }
