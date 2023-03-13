@@ -1,5 +1,5 @@
 import { useContext, ReactNode } from "react";
-import { SectionContext } from "@/context/sectionContext";
+import { SectionContext } from "@/context/SectionContext";
 
 function Wrapper({ children }: { children: ReactNode }) {
   const { selectedSection } = useContext(SectionContext);

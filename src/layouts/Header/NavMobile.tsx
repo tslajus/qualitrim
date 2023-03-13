@@ -17,16 +17,16 @@ function NavMobile({ links, button }: Props) {
   return (
     <>
       <div className="menu-btn-container" onClick={toggleMenu}>
-        <HamburgerButton isMenuOpen={isMenuOpen} />
+        <HamburgerButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       </div>
 
       {isMenuOpen && (
-        <div className="header__mobile">
+        <nav className="header__mobile">
           <div className="header__mobile-links">{links}</div>
           <Button onClick={() => scrollToId(button.scrollTo)}>
             {button.text}
           </Button>
-        </div>
+        </nav>
       )}
     </>
   );

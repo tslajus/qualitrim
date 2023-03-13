@@ -8,22 +8,41 @@ import {
 import { Logo } from "@/components";
 
 function FooterBrand({ data }: NavData) {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="footer__brand paragraph paragraph--light color--primary">
       <div className="footer__social">
         <Logo />
+
         <div className="footer__icons">
-          <IconFB />
-          <IconInsta />
-          <IconTwitter />
-          <IconLinkedIn />
-          <IconYoutube />
+          <a href="#">
+            <IconFB /> <span className="sr-only">Facebook</span>
+          </a>
+
+          <a href="#">
+            <IconInsta />
+            <span className="sr-only">Instagram</span>
+          </a>
+
+          <a href="#">
+            <IconTwitter />
+            <span className="sr-only">Twitter</span>
+          </a>
+
+          <a href="#">
+            <IconLinkedIn /> <span className="sr-only">LinkedIn</span>
+          </a>
+
+          <a href="#">
+            <IconYoutube /> <span className="sr-only">Youtube</span>
+          </a>
         </div>
       </div>
-      <span className="paragraph paragraph--light color--primary">
+      <p className="paragraph paragraph--light color--primary">
         {data.tagline}
-      </span>
-      <span>{`© ${data.name} All Rights Reserved.`}</span>
+      </p>
+      <span>{`© ${currentYear} ${data.name} All Rights Reserved.`}</span>
     </div>
   );
 }

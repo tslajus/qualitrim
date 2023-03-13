@@ -4,9 +4,9 @@ type Props = {
 
 function LearnMore({ ...props }: Props) {
   return (
-    <div className="text-narrow text-narrow--link" {...props}>
+    <button className="text-narrow text-narrow--link" {...props}>
       Learn more
-    </div>
+    </button>
   );
 }
 

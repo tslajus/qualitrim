@@ -4,10 +4,10 @@ import HomeIllustration from "./parts/HomeIllustration";
 
 function Home() {
   return (
-    <div id="home" className="home">
+    <section id="home" className="home">
       <HomeTextBox data={data} />
       <HomeIllustration />
-    </div>
+    </section>
   );
 }
 

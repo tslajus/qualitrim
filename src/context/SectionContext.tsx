@@ -9,12 +9,12 @@ type SectionContextType = {
   setSelectedSection: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export const SectionContext = createContext<SectionContextType>({
+const SectionContext = createContext<SectionContextType>({
   selectedSection: "home",
   setSelectedSection: () => {},
 });
 
-export const SectionContextProvider = ({ children }: Props) => {
+const SectionContextProvider = ({ children }: Props) => {
   const [selectedSection, setSelectedSection] = useState("home");
 
   return (
@@ -23,3 +23,5 @@ export const SectionContextProvider = ({ children }: Props) => {
     </SectionContext.Provider>
   );
 };
+
+export { SectionContextProvider, SectionContext };

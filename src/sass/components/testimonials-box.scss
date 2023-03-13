@@ -22,7 +22,6 @@
   }
 
   &__arrows {
-    @include font-style("", $color-primary, $fs-lg);
     @include display-flex(row, space-between, center);
     width: 100%;
     padding: 0 $spacing-md;
@@ -39,5 +38,11 @@
     svg:hover {
       color: $color-light;
     }
+  }
+
+  &__arrow {
+    @include display-flex(row, center, center);
+    @include font-style("", $color-primary, $fs-lg);
+    background: none;
   }
 }

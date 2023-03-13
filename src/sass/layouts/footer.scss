@@ -11,7 +11,12 @@
     @include width-height(auto, auto);
   }
 
+  &__navigation {
+    align-items: start;
+  }
+
   &__icons {
+    @include display-flex(row, center, center);
     cursor: pointer;
     font-size: $fs-xs;
 
@@ -22,6 +27,10 @@
       &:hover {
         color: $color-light;
       }
+    }
+
+    a {
+      @include display-flex(row, center, center);
     }
   }
 

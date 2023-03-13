@@ -29,7 +29,7 @@ function TestimonialsBox({ data }: Props) {
   }, [clientNumber]);
 
   return (
-    <div className="testimonials-box">
+    <article className="testimonials-box">
       <div className="testimonials-box__content ">
         <img
           src={`src/assets/clients/${client.img}`}
@@ -40,10 +40,16 @@ function TestimonialsBox({ data }: Props) {
       <Paragraph color="light">- {makeUpperCase(client.name)} -</Paragraph>
 
       <div className="testimonials-box__arrows">
-        <IconLeft onClick={() => handleClientNumber("back")} />
-        <IconRight onClick={() => handleClientNumber("next")} />
+        <button className="testimonials-box__arrow">
+          <IconLeft onClick={() => handleClientNumber("back")} />
+          <span className="sr-only">Previous testimonial</span>
+        </button>
+        <button className="testimonials-box__arrow">
+          <IconRight onClick={() => handleClientNumber("next")} />
+          <span className="sr-only">Next testimonial</span>
+        </button>
       </div>
-    </div>
+    </article>
   );
 }
 

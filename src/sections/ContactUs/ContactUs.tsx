@@ -4,10 +4,10 @@ import ContactUsGallery from "./parts/ContactUsGallery";
 
 function Form() {
   return (
-    <div id="contact-us" className="contacts">
+    <section id="contact-us" className="contacts">
       <ContactUsForm data={data} />
       <ContactUsGallery gallery={data.gallery} shadow={data.shadow} />
-    </div>
+    </section>
   );
 }
 

@@ -1,7 +1,7 @@
 import { TextBlock } from "@/layouts";
 import { Heading, Paragraph } from "@/components";
 
-function TeamTextBox({ data }: TeamData) {
+function TeamHeader({ data }: TeamData) {
   return (
     <TextBlock fullWidth={false}>
       <Heading
@@ -16,4 +16,4 @@ function TeamTextBox({ data }: TeamData) {
   );
 }
 
-export default TeamTextBox;
+export default TeamHeader;
