@@ -1,7 +1,6 @@
 .clients {
   @include width-height(100%);
 
-  background-color: $color-light;
   gap: $spacing-8xl;
   padding: 0 $spacing-5xl;
   padding-top: $spacing-5xl;
@@ -28,9 +27,17 @@
   }
 
   &__background {
-    @include width-height(100%, 50%);
-    background-color: $color-dark;
+    @include display-flex(column);
+    @include width-height(100%, 100%);
     position: absolute;
-    bottom: 0;
+
+    &--top {
+      @include width-height(100%, 100%);
+      background-color: $color-light;
+    }
+    &--bottom {
+      @include width-height(100%, 100%);
+      background-color: $color-dark;
+    }
   }
 }

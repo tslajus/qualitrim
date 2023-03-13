@@ -10,9 +10,10 @@ type Props = {
     icon?: string;
     background?: string;
   };
+  action: () => void;
 };
 
-function FeatureBox({ data }: Props) {
+function FeatureBox({ data, action }: Props) {
   const backgroundStyle: CSSProperties = {
     background: `url(/src/assets/benefits/${data.background})`,
   };
@@ -24,7 +25,7 @@ function FeatureBox({ data }: Props) {
       <div className="feature__text">
         <h4 className="text-narrow">{data.title}</h4>
         <Paragraph color="light">{data.paragraph}</Paragraph>
-        <LearnMore />
+        <LearnMore onClick={action} />
       </div>
     </div>
   );

@@ -1,5 +1,13 @@
-function LearnMore() {
-  return <div className="text-narrow text-narrow--link">Learn more</div>;
+type Props = {
+  [key: string]: any;
+};
+
+function LearnMore({ ...props }: Props) {
+  return (
+    <div className="text-narrow text-narrow--link" {...props}>
+      Learn more
+    </div>
+  );
 }
 
 export default LearnMore;

@@ -1,11 +1,14 @@
 @import "../utilities/layers.scss";
-
 .header {
   @include display-flex(row, space-between, center);
-  @include width-height(100%, $sz-header-desktop);
+  @include width-height($sz-wrapper, $sz-header-desktop);
   background-color: $color-dark;
   padding: $spacing-md $spacing-xl;
   position: fixed;
+  left: 0;
+  right: 0;
+  margin-left: auto; /* add these two lines */
+  margin-right: auto; /* to center the header */
   z-index: $z9;
   transition: $tr-bg-long;
 

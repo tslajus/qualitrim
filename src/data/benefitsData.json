@@ -8,7 +8,8 @@
       "paragraph": "Our barbershop has state-of-the-art facilities for a great grooming experience. We believe a comfortable environment & modern equipment make all the difference.",
       "btn": "Learn more",
       "icon": "icon_1.svg",
-      "background": "benefits_1.jpg"
+      "background": "benefits_1.jpg",
+      "scrollTo": "contact-us"
     },
     {
       "id": "b2",
@@ -16,7 +17,8 @@
       "paragraph": "Choose from a wide range of unique styles to find the perfect one. Our experienced barbers create various hairstyles, from classic to modern, to match your preferences.",
       "btn": "Learn more",
       "icon": "icon_2.svg",
-      "background": "benefits_2.jpg"
+      "background": "benefits_2.jpg",
+      "scrollTo": "contact-us"
     },
     {
       "id": "b3",
@@ -24,7 +26,8 @@
       "paragraph": "Our expert barbers are skilled and passionate about their craft. They keep up with the latest trends to provide the best grooming services possible. ",
       "btn": "Learn more",
       "icon": "icon_3.svg",
-      "background": "benefits_3.jpg"
+      "background": "benefits_3.jpg",
+      "scrollTo": "team"
     }
   ]
 }

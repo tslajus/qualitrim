@@ -4,7 +4,7 @@ import TeamMembers from "./parts/TeamMembers";
 
 function Team() {
   return (
-    <div className="team">
+    <div id="team" className="team">
       <TeamTextBox data={data} />
       <TeamMembers data={data} />
     </div>

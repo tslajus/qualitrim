@@ -8,7 +8,7 @@
     { "id": "team", "name": "Team" }
   ],
 
-  "CTA": "Get in touch",
+  "CTA": { "text": "Get in touch", "scrollTo": "contact-us" },
 
   "tagline": "From classic cuts to modern trends, we've got you covered!",
   "contacts": {

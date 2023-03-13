@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { scrollToId } from "@/utils";
 import { HamburgerButton, Button } from "@/components";
 
 type Props = {
   links: React.ReactNode;
-  button: string;
+  button: ScrollBtn;
 };
 
 function NavMobile({ links, button }: Props) {
@@ -22,7 +23,9 @@ function NavMobile({ links, button }: Props) {
       {isMenuOpen && (
         <div className="header__mobile">
           <div className="header__mobile-links">{links}</div>
-          <Button>{button}</Button>
+          <Button onClick={() => scrollToId(button.scrollTo)}>
+            {button.text}
+          </Button>
         </div>
       )}
     </>

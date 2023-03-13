@@ -4,7 +4,7 @@ import HomeIllustration from "./parts/HomeIllustration";
 
 function Home() {
   return (
-    <div className="home">
+    <div id="home" className="home">
       <HomeTextBox data={data} />
       <HomeIllustration />
     </div>

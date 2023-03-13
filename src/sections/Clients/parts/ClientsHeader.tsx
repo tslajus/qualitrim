@@ -1,3 +1,4 @@
+import { scrollToId } from "@/utils";
 import { TextBlock } from "@/layouts";
 import { Heading, Paragraph, Button } from "@/components";
 
@@ -14,7 +15,9 @@ function ClientsHeader({ data }: ClientsData) {
             color2="dark"
           />
           <Paragraph color="dark">{data.paragraph}</Paragraph>
-          <Button>{data.CTA}</Button>
+          <Button onClick={() => scrollToId(data.CTA.scrollTo)}>
+            {data.CTA.text}
+          </Button>
         </TextBlock>
       </div>
     </div>

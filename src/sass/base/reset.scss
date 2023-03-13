@@ -1,4 +1,4 @@
-@import "typography";
+@import "../utilities/colors.scss";
 
 *,
 *:before,
@@ -16,6 +16,7 @@ html {
 }
 
 body {
+  background-color: $color-primary;
   line-height: 1;
 }
 

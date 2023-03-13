@@ -1,9 +1,9 @@
-import { Header, Footer } from "./layouts";
+import { Header, Footer, Wrapper } from "./layouts";
 import { Home, Benefits, Clients, Team, ContactUs } from "./sections";
 
 function App() {
   return (
-    <>
+    <Wrapper>
       <Header />
       <Home />
       <Benefits />
@@ -11,7 +11,7 @@ function App() {
       <Team />
       <ContactUs />
       <Footer />
-    </>
+    </Wrapper>
   );
 }
 
