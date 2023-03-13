@@ -1,15 +1,11 @@
 import { scrollToId } from "@/utils";
 
 function FooterNav({ data }: NavData) {
-  const handleNavClick = (id: string) => {
-    scrollToId(id);
-  };
-
   const renderedLinks = data.navLinks.map((link: Link) => {
     return (
       <div
         onClick={() => {
-          handleNavClick(link.id);
+          scrollToId(link.id);
         }}
         key={link.id}
         className="link"

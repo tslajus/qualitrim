@@ -37,6 +37,7 @@
       @include width-height($spacing-lg, 2px);
       background-color: $color-primary;
       display: inline-block;
+      transition: $tr-bg-short;
     }
 
     &::before,

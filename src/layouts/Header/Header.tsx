@@ -1,7 +1,7 @@
 import data from "@/data/navData.json";
 import { useState } from "react";
 import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
-import { useOnTopState, scrollToId } from "@/utils";
+import { useOnTopState, scrollToId, onEnterViewport } from "@/utils";
 import NavDesktop from "./NavDesktop";
 import NavMobile from "./NavMobile";
 import { Logo } from "@/components";
@@ -9,21 +9,19 @@ import { Logo } from "@/components";
 function Header() {
   const [selectedSection, setSelectedSection] = useState("home");
 
-  const handleNavClick = (id: string) => {
-    scrollToId(id);
-    setSelectedSection(id);
-  };
-
   const navLinks = data.navLinks;
   const renderedLinks = navLinks.map((link: Link) => (
     <div
-      onClick={(id) => handleNavClick(link.id)}
+      onClick={() => scrollToId(link.id)}
       key={link.id}
       className={`link ${link.id === selectedSection && "link--active"}`}
     >
       {link.name}
     </div>
   ));
+
+  const ids = [...navLinks.map((navLink) => navLink.id), "contact-us"];
+  ids.forEach((id) => onEnterViewport(id, () => setSelectedSection(id)));
 
   const tabLand = portSize.tabLand;
   const isSmallScreen = useMediaQuery(tabLand);
