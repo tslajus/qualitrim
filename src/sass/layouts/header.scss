@@ -1,7 +1,7 @@
 @import "../utilities/layers.scss";
 .header {
   @include display-flex(row, space-between, center);
-  @include width-height($sz-wrapper, $sz-header-desktop);
+  @include width-height($sz-header-width, $sz-header-desktop);
   background-color: $color-dark;
   padding: $spacing-md $spacing-xl;
   position: fixed;

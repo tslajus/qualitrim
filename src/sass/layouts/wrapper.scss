@@ -3,4 +3,22 @@
   @include width-height($sz-wrapper, auto);
   margin: 0 auto;
   background-color: $color-dark;
+  border-left: $sz-wrapper-border solid;
+  border-right: $sz-wrapper-border solid;
+  border-color: $color-secondary;
+  transition: $tr-all-medium;
+
+  &--home {
+    border-color: $color-secondary;
+  }
+
+  &--benefits,
+  &--testimonials {
+    border-color: $color-tertiary;
+  }
+
+  &--team,
+  &--contact-us {
+    border-color: $color-primary;
+  }
 }

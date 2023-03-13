@@ -1,5 +1,6 @@
 import data from "@/data/navData.json";
-import { useState } from "react";
+import { useContext } from "react";
+import { SectionContext } from "@/context/sectionContext";
 import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 import { useOnTopState, scrollToId, onEnterViewport } from "@/utils";
 import NavDesktop from "./NavDesktop";
@@ -7,7 +8,7 @@ import NavMobile from "./NavMobile";
 import { Logo } from "@/components";
 
 function Header() {
-  const [selectedSection, setSelectedSection] = useState("home");
+  const { selectedSection, setSelectedSection } = useContext(SectionContext);
 
   const navLinks = data.navLinks;
   const renderedLinks = navLinks.map((link: Link) => (

@@ -1,7 +1,12 @@
-import { ReactNode } from "react";
+import { useContext, ReactNode } from "react";
+import { SectionContext } from "@/context/sectionContext";
 
 function Wrapper({ children }: { children: ReactNode }) {
-  return <div className="wrapper">{children}</div>;
+  const { selectedSection } = useContext(SectionContext);
+
+  return (
+    <div className={`wrapper wrapper--${selectedSection}`}>{children}</div>
+  );
 }
 
 export default Wrapper;
