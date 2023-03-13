@@ -1,6 +1,6 @@
 .message-form {
   @include display-flex(column, start, start, $spacing-md);
-  @include width-height(100%);
+  @include width-height(100%, 100%);
 
   &__element {
     @include font-style(
@@ -38,8 +38,8 @@
   textarea {
     width: 100%;
     max-width: 100%;
-    min-height: 25rem;
-    height: auto;
+
+    height: 100%;
     resize: none;
     flex: 1;
   }

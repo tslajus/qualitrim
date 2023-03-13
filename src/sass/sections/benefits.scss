@@ -1,8 +1,8 @@
 .benefits {
-  @include display-flex(column, start, start, $spacing-5xl);
+  @include display-flex(column, start, start, $spacing-4xl);
   @include width-height(100%);
   background-color: $color-light;
-  padding: $spacing-15xl $spacing-5xl $spacing-5xl;
+  padding: $spacing-9xl $spacing-5xl $spacing-5xl;
 
   &__features {
     @include display-flex(row, space-between, stretch, $spacing-4xl);

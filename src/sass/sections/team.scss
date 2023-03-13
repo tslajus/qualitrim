@@ -1,7 +1,7 @@
 .team {
-  @include display-flex(column, start, start, $spacing-5xl);
+  @include display-flex(column, start, start, $spacing-4xl);
   @include width-height(100%);
-  padding: $spacing-5xl;
+  padding: $spacing-8xl $spacing-5xl;
 
   &__members {
     @include width-height(100%, 100%);

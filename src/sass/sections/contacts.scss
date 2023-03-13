@@ -1,12 +1,13 @@
 .contacts {
   @include display-flex(row, space-between, start, $spacing-5xl);
-  @include width-height(100%);
-  padding: $spacing-5xl $spacing-5xl $spacing-10xl;
+  // @include width-height(100%, 100%);
+  padding: $spacing-8xl $spacing-5xl $spacing-10xl;
 
   &__form {
-    @include display-flex(column, space-between, start, $spacing-4xl);
+    @include display-flex(column, center, center, $spacing-4xl);
     @include width-height(100%, 100%);
     flex: 3;
+    height: $sz-form;
   }
   &__gallery {
     @include display-flex(row, center, start);
@@ -15,9 +16,13 @@
     flex: 2;
     position: relative;
 
-    img {
-      height: 100%;
-      object-fit: cover;
+    &-img {
+      @include display-flex(row, center, center);
+      width: 60%;
+      img {
+        height: $sz-form;
+        object-fit: cover;
+      }
     }
 
     &-shadow {
@@ -32,4 +37,10 @@
       opacity: 0.9;
     }
   }
+}
+
+.test {
+  display: flexs;
+  height: 200rem;
+  background-color: black;
 }

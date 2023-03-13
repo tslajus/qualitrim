@@ -15,10 +15,14 @@ function ContactUsGallery({ gallery, shadow }: Props) {
     return () => clearInterval(intervalId);
   }, [imageNumber]);
 
+  const renderedImg = (
+    <img src={`src/assets/gallery/${image}`} alt="image of a barber shop" />
+  );
+
   return (
     <>
       <div className="contacts__gallery">
-        <img src={`src/assets/gallery/${image}`} alt="image of a barber shop" />
+        <div className="contacts__gallery-img">{renderedImg}</div>
         <span className="text-shadow contacts__gallery-shadow">
           {makeUpperCase(shadow)}
         </span>

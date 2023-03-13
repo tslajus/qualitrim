@@ -1,7 +1,7 @@
 .feature {
-  @include display-flex(column, "", center, $spacing-xxl);
+  @include display-flex(column, "", center, $spacing-lg);
   background-color: $color-dark;
-  padding: $spacing-xxl;
+  padding: $spacing-xl;
   flex: 1;
   position: relative;
 
