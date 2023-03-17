@@ -1,5 +1,5 @@
 import data from "@/data/navData.json";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { SectionContext } from "@/context/SectionContext";
 import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 import { useOnTopState, scrollToId, onEnterViewport } from "@/utils";
@@ -9,11 +9,17 @@ import { Logo } from "@/components";
 
 function Header() {
   const { selectedSection, setSelectedSection } = useContext(SectionContext);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const navLinks = data.navLinks;
+
+  const handleLinkClick = (id: string) => {
+    scrollToId(id);
+    setIsMenuOpen(false);
+  };
   const renderedLinks = navLinks.map((link: Link) => (
     <button
-      onClick={() => scrollToId(link.id)}
+      onClick={() => handleLinkClick(link.id)}
       key={link.id}
       className={`link ${link.id === selectedSection && "link--active"}`}
     >
@@ -29,7 +35,12 @@ function Header() {
   const onTop = useOnTopState();
 
   const renderedNav = isSmallScreen ? (
-    <NavMobile links={renderedLinks} button={data.CTA} />
+    <NavMobile
+      links={renderedLinks}
+      button={data.CTA}
+      isMenuOpen={isMenuOpen}
+      setIsMenuOpen={setIsMenuOpen}
+    />
   ) : (
     <NavDesktop links={renderedLinks} button={data.CTA} />
   );

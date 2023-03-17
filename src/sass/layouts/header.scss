@@ -54,5 +54,9 @@
 @include breakpoint("tab-port") {
   .header {
     width: $sz-header-width-small;
+
+    &__mobile {
+      width: calc(100% - $sz-wrapper-border-mobile);
+    }
   }
 }

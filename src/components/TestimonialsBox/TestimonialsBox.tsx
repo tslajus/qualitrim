@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import { useInterval } from "@/hooks";
 import { makeUpperCase } from "@/utils";
-import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 import { Paragraph, ArrowIcon } from "../";
 
 type Props = {
@@ -10,8 +10,6 @@ type Props = {
 function TestimonialsBox({ data }: Props) {
   const [clientNumber, setClientNumber] = useState(1);
   const client = data[clientNumber - 1];
-  const isSmallScreen = useMediaQuery(portSize.desktopSmall);
-  const isMobile = useMediaQuery(portSize.tabPort);
 
   const handleClientNumber = (direction: string | undefined) => {
     direction === "back"
@@ -19,13 +17,9 @@ function TestimonialsBox({ data }: Props) {
       : setClientNumber(data.length === clientNumber ? 1 : clientNumber + 1);
   };
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      handleClientNumber("next");
-    }, 10000);
-
-    return () => clearInterval(intervalId);
-  }, [clientNumber]);
+  useInterval(() => {
+    handleClientNumber("next");
+  }, 10000);
 
   return (
     <article className="testimonials-box">

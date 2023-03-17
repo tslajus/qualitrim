@@ -11,10 +11,22 @@ type Props = {
 };
 
 function ArrowIcon({ direction, label, onClick, small = false }: Props) {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === "Enter") {
+      onClick?.();
+    }
+  };
+
   if (direction === "right") {
     return (
-      <button className={`arrow-icon ${small && "arrow-icon--small"}`}>
-        <IconRight onClick={onClick} />
+      <button
+        className={`arrow-icon ${small && "arrow-icon--small"}`}
+        role="button"
+        tabIndex={0}
+        onClick={onClick}
+        onKeyDown={handleKeyDown}
+      >
+        <IconRight />
         <span className="sr-only">{`Next ${label}`}</span>
       </button>
     );
@@ -22,8 +34,14 @@ function ArrowIcon({ direction, label, onClick, small = false }: Props) {
 
   if (direction === "left") {
     return (
-      <button className={`arrow-icon ${small && "arrow-icon--small"}`}>
-        <IconLeft onClick={onClick} />
+      <button
+        className={`arrow-icon ${small && "arrow-icon--small"}`}
+        role="button"
+        tabIndex={0}
+        onClick={onClick}
+        onKeyDown={handleKeyDown}
+      >
+        <IconLeft />
         <span className="sr-only">{`Previous ${label}`}</span>
       </button>
     );
