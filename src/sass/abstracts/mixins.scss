@@ -1,22 +1,26 @@
 @mixin breakpoint($point) {
   @if $point == "mobile" {
-    @media (max-width: $mobile) {
+    @media (max-width: calc($mobile - 1px)) {
       @content;
     }
   } @else if $point == "tab-port" {
-    @media (max-width: $tab-port) {
+    @media (max-width: calc($tab-port - 1px)) {
       @content;
     }
   } @else if $point == "tab-land" {
-    @media (max-width: $tab-land) {
+    @media (max-width: calc($tab-land - 1px)) {
       @content;
     }
   } @else if $point == "desktop-small" {
-    @media (max-width: $desktop-small) {
+    @media (max-width: calc($desktop-small - 1px)) {
+      @content;
+    }
+  } @else if $point == "desktop" {
+    @media (max-width: calc($desktop - 1px)) {
       @content;
     }
   } @else if $point == "desktop-big" {
-    @media (max-width: $desktop-big) {
+    @media (max-width: calc($desktop-big - 1px)) {
       @content;
     }
   } @else {

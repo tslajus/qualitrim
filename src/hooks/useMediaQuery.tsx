@@ -10,10 +10,10 @@ type portSize = {
 
 const portSize = {
   mobile: "(max-width: 350px)",
-  tabPort: "(max-width: 768px)",
-  tabLand: "(max-width: 1024px)",
-  desktopSmall: "(max-width: 1280px)",
-  desktopBig: "(max-width: 1440px)",
+  tabPort: "(max-width: 767px)",
+  tabLand: "(max-width: 1023px)",
+  desktopSmall: "(max-width: 1279px)",
+  desktopBig: "(max-width: 1439px)",
 };
 
 function useMediaQuery(query: string): boolean {

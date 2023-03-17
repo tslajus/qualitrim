@@ -1,12 +1,13 @@
 .team {
   @include display-flex(column, start, start, $spacing-4xl);
   @include width-height(100%);
-  padding: $spacing-8xl $spacing-5xl;
+  min-height: 100vh;
+  padding: $spacing-12xl $spacing-5xl;
 
   &__members {
     @include width-height(100%, 100%);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: $spacing-lg;
     overflow: hidden;
 
@@ -19,8 +20,9 @@
       @include display-flex(column, center, center, $spacing-lg);
       width: 100%;
       aspect-ratio: 1;
+      font-size: $fs-xxxs;
       text-align: center;
-      padding: $spacing-xxl;
+      padding: $spacing-xl;
       background-color: $color-dark-transparent;
       user-select: none;
       position: absolute;
@@ -38,6 +40,55 @@
 
       aspect-ratio: 1;
       object-fit: cover;
+    }
+  }
+}
+
+@include breakpoint("desktop-big") {
+  .team {
+    padding: $spacing-10xl $spacing-5xl $spacing-5xl;
+
+    &__members {
+      &-info {
+        padding: $spacing-lg;
+        p {
+          font-size: $fs-xxxs;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint("desktop-small") {
+  .team {
+    &__members {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-lg;
+    }
+  }
+}
+
+@include breakpoint("tab-land") {
+  .team {
+    gap: $spacing-lg;
+  }
+}
+
+@include breakpoint("tab-port") {
+  .team {
+    padding: $spacing-10xl $spacing-xxl;
+    gap: $spacing-xl;
+
+    &__members {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@include breakpoint("mobile") {
+  .team {
+    &__members-info {
+      display: none;
     }
   }
 }

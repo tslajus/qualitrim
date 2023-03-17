@@ -22,6 +22,7 @@ function TeamMemberBox({ data }: Props) {
       >
         - {makeUpperCase(data.name)} -
       </span>
+
       <div className="team__members-info">
         <Paragraph color="light">{data.text}</Paragraph>
       </div>

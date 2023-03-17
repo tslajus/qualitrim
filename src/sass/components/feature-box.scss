@@ -1,5 +1,6 @@
 .feature {
   @include display-flex(column, "", center, $spacing-lg);
+
   background-color: $color-dark;
   padding: $spacing-xl;
   flex: 1;
@@ -28,5 +29,51 @@
     opacity: 0.9;
     position: absolute;
     z-index: $z5;
+  }
+}
+
+@include breakpoint("desktop-big") {
+  .feature {
+    gap: $spacing-md;
+
+    &__text {
+      gap: $spacing-sm;
+    }
+
+    &-icon {
+      @include width-height($sz-icon-small);
+    }
+  }
+}
+
+@include breakpoint("desktop") {
+  .feature {
+    gap: $spacing-xl;
+    min-height: 40vh;
+  }
+}
+
+@include breakpoint("tab-land") {
+  .feature {
+    gap: $spacing-xl;
+    height: 48rem;
+
+    &__text {
+      gap: $spacing-xl;
+    }
+
+    &-icon {
+      @include width-height($sz-icon-small);
+    }
+  }
+}
+
+@include breakpoint("tab-port") {
+  .feature {
+    height: auto;
+
+    &__text {
+      gap: $spacing-lg;
+    }
   }
 }

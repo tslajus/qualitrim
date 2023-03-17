@@ -80,3 +80,20 @@
     top: 1.2rem;
   }
 }
+
+.arrow-icon {
+  @include display-flex(row, center, center);
+  @include font-style("", $color-primary, $fs-lg);
+  background: none;
+
+  &--small {
+    font-size: $fs-md;
+  }
+}
+
+@include breakpoint("mobile") {
+  .button {
+    font-size: $fs-xxs;
+    padding: $spacing-xxs $spacing-sm;
+  }
+}

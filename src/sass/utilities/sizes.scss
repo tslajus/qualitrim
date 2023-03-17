@@ -1,9 +1,12 @@
 $sz-wrapper: 100%;
 $sz-wrapper-border: $spacing-md;
+$sz-wrapper-border-mobile: $spacing-sm;
 $sz-icon-large: 8.2rem;
+$sz-icon-small: 6.4rem;
 $sz-header-desktop: 11.2rem;
 $sz-header-mobile: 35rem;
 $sz-header-width: calc($sz-wrapper - 2 * $sz-wrapper-border);
-// $sz-wrapper: calc(100% - $spacing-lg * 2);
+$sz-header-width-small: calc($sz-wrapper - 2 * $sz-wrapper-border-mobile);
 $sz-form: 70rem;
+$sz-form-sm: 63rem;
 $sz-testimonials-box: 76rem;

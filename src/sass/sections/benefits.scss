@@ -1,10 +1,74 @@
 .benefits {
   @include display-flex(column, start, start, $spacing-4xl);
   @include width-height(100%);
+  min-height: 100vh;
   background-color: $color-light;
-  padding: $spacing-9xl $spacing-5xl $spacing-5xl;
+  padding: $spacing-12xl $spacing-5xl $spacing-5xl;
 
   &__features {
     @include display-flex(row, space-between, stretch, $spacing-4xl);
+
+    &-arrows {
+      @include display-flex(row, space-between, space-between);
+      @include width-height(100%, auto);
+
+      padding: $spacing-xs;
+      position: absolute;
+      bottom: 0;
+      z-index: $z8;
+
+      svg {
+        cursor: pointer;
+        transition: $tr-color-short;
+      }
+
+      svg:hover {
+        color: $color-light;
+      }
+    }
+
+    &-arrow {
+      @include display-flex(row, center, center);
+      @include font-style("", $color-primary, $fs-lg);
+      background: none;
+    }
+  }
+}
+
+@include breakpoint("desktop-big") {
+  .benefits {
+    padding-top: $spacing-9xl;
+    gap: $spacing-lg;
+
+    &__features {
+      gap: $spacing-lg;
+    }
+  }
+}
+
+@include breakpoint("desktop") {
+  .benefits {
+    &__features {
+      margin: auto 0;
+    }
+  }
+}
+
+@include breakpoint("tab-land") {
+  .benefits {
+    padding: $spacing-10xl $spacing-5xl $spacing-5xl;
+  }
+}
+
+@include breakpoint("tab-port") {
+  .benefits {
+    gap: $spacing-xl;
+    padding: $spacing-8xl $spacing-xxl $spacing-5xl;
+  }
+}
+
+@include breakpoint("mobile") {
+  .benefits {
+    padding: $spacing-8xl $spacing-xl $spacing-4xl;
   }
 }

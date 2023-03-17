@@ -3,6 +3,7 @@
 
 $fs-heading-big: $fs-4xl;
 $fs-heading-medium: $fs-lg;
+$fs-heading-medium--mobile: $fs-md;
 $fs-heading-small: $fs-md;
 $fs-subheading: 5.3rem;
 $fs-paragraph: $fs-xxs;
@@ -38,7 +39,7 @@ $ls-small: 0.1em;
 
   &--light {
     @include font-style($ff-heading, "", "", $fw-light);
-    line-height: 1;
+    line-height: 1.25;
   }
 }
 
@@ -104,5 +105,13 @@ $ls-small: 0.1em;
     &:hover {
       color: $color-light;
     }
+  }
+}
+
+@include breakpoint("desktop-small") {
+  .heading {
+    font-size: $fs-heading-medium--mobile;
+    line-height: 1.5;
+    text-align: start;
   }
 }

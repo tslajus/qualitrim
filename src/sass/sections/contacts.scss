@@ -1,7 +1,6 @@
 .contacts {
   @include display-flex(row, space-between, start, $spacing-5xl);
-  // @include width-height(100%, 100%);
-  padding: $spacing-8xl $spacing-5xl $spacing-10xl;
+  padding: $spacing-10xl $spacing-5xl $spacing-10xl;
 
   &__form {
     @include display-flex(column, center, center, $spacing-4xl);
@@ -19,6 +18,7 @@
     &-img {
       @include display-flex(row, center, center);
       width: 60%;
+
       img {
         height: $sz-form;
         object-fit: cover;
@@ -39,8 +39,59 @@
   }
 }
 
-.test {
-  display: flexs;
-  height: 200rem;
-  background-color: black;
+@include breakpoint("desktop-big") {
+  .contacts {
+    padding: $spacing-8xl $spacing-5xl $spacing-10xl;
+    gap: $spacing-6xl;
+
+    &__form {
+      gap: $spacing-xxl;
+      height: $sz-form-sm;
+    }
+
+    &__gallery-img {
+      img {
+        height: $sz-form-sm;
+      }
+    }
+
+    &-shadow {
+      font-size: $fs-4xl;
+      bottom: -6rem;
+    }
+  }
+}
+
+@include breakpoint("desktop-small") {
+  .contacts {
+    @include display-flex(column, space-between, start, $spacing-5xl);
+    padding-top: $spacing-10xl;
+
+    &__gallery-img {
+      width: 100%;
+      padding: 0 $spacing-5xl;
+      img {
+        height: auto;
+        max-height: 80vh;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include breakpoint("tab-port") {
+  .contacts {
+    padding: $spacing-10xl $spacing-xxl $spacing-4xl;
+    gap: $spacing-4xl;
+
+    &__gallery {
+      &-shadow {
+        display: none;
+      }
+
+      &-img {
+        padding: 0;
+      }
+    }
+  }
 }

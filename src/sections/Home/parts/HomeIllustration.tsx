@@ -1,16 +1,13 @@
 import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 
-type Props = {};
-
-function HomeIllustration({}: Props) {
-  const isMobile = portSize.mobile;
-  const isTabPort = portSize.tabPort;
-  const isTabLand = portSize.tabLand;
-  const isDesktopSmall = portSize.desktopSmall;
-  const isDesktopBIg = portSize.desktopBig;
+function HomeIllustration() {
+  const isDesktopBig = useMediaQuery(portSize.desktopBig);
 
   const renderedImg = (
-    <img src="src\assets\home\home_img_720.png" alt="bearded man" />
+    <img
+      src={`src/assets/home/home_img_${isDesktopBig ? "720" : "1080"}.png`}
+      alt="bearded man"
+    />
   );
 
   return <div className="home__asset">{renderedImg}</div>;
