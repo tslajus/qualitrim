@@ -22,3 +22,9 @@
     border-color: $color-primary;
   }
 }
+
+@include breakpoint("tab-port") {
+  .wrapper {
+    border-width: $sz-wrapper-border-mobile;
+  }
+}

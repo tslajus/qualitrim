@@ -1,3 +1,5 @@
+import FooterContacts from "./FooterContacts";
+import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 import {
   AiFillFacebook as IconFB,
   AiFillInstagram as IconInsta,
@@ -8,6 +10,7 @@ import {
 import { Logo } from "@/components";
 
 function FooterBrand({ data }: NavData) {
+  const isSmallScren = useMediaQuery(portSize.tabPort);
   const currentYear = new Date().getFullYear();
 
   return (
@@ -39,9 +42,15 @@ function FooterBrand({ data }: NavData) {
           </a>
         </div>
       </div>
-      <p className="paragraph paragraph--light color--primary">
-        {data.tagline}
-      </p>
+
+      {isSmallScren ? (
+        <FooterContacts data={data} />
+      ) : (
+        <p className="paragraph paragraph--light color--primary">
+          {data.tagline}
+        </p>
+      )}
+
       <span>{`© ${currentYear} ${data.name} All Rights Reserved.`}</span>
     </div>
   );

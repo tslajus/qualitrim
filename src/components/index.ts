@@ -1,3 +1,4 @@
+export { default as ArrowIcon } from "./Buttons/ArrowIcon";
 export { default as Button } from "./Buttons/Button";
 export { default as FeatureBox } from "./FeatureBox/FeatureBox";
 export { default as Heading } from "./Heading/Heading";

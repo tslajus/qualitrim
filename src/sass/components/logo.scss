@@ -11,7 +11,7 @@
   user-select: none;
 }
 
-@include breakpoint($mobile) {
+@include breakpoint("tab-port") {
   .logo {
     font-size: $fs-paragraph-big;
   }

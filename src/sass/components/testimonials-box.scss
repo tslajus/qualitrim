@@ -1,14 +1,12 @@
 .testimonials-box {
-  @include display-flex(column, space-between, center, $spacing-xxl);
-
-  height: 76rem;
+  @include display-flex(column, space-between, center, $spacing-lg);
+  @include width-height(100%, 100%);
   background-color: $color-tertiary;
   z-index: $z5;
   padding: $spacing-xxl;
   position: relative;
-  width: 100%;
 
-  &__content {
+  &__photo {
     @include display-flex(column, center, end, $spacing-xl);
     width: 100%;
     position: relative;
@@ -21,14 +19,14 @@
     }
   }
 
-  &__arrows {
+  &__text {
+    @include display-flex(column, space-between, center, $spacing-xl);
+    width: 100%;
+  }
+
+  &-arrows {
     @include display-flex(row, space-between, center);
     width: 100%;
-    padding: 0 $spacing-md;
-    position: absolute;
-    bottom: $spacing-sm;
-    right: 0;
-    left: 0;
 
     svg {
       cursor: pointer;
@@ -38,11 +36,66 @@
     svg:hover {
       color: $color-light;
     }
+
+    &--small-screen {
+      @include display-flex(row, space-between, center);
+      position: relative;
+    }
   }
 
-  &__arrow {
+  &-arrow {
     @include display-flex(row, center, center);
     @include font-style("", $color-primary, $fs-lg);
     background: none;
+  }
+}
+
+@media (max-width: calc($desktop-big - 1px)) {
+  .testimonials-box {
+    gap: $spacing-md;
+    padding: $spacing-lg;
+
+    &-arrows {
+      bottom: 0;
+      padding: $spacing-xs;
+    }
+
+    &-arrow {
+      font-size: $fs-md;
+    }
+  }
+}
+
+@media (max-width: calc($desktop-small - 1px)) {
+  .testimonials-box {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-xxl;
+
+    &__text {
+      @include display-flex(column, space-between, stretch);
+      height: 80%;
+    }
+  }
+
+  .client {
+    @include display-flex(column, center, end, $spacing-xl);
+    padding-bottom: $spacing-sm;
+    height: 100%;
+  }
+}
+
+@include breakpoint("tab-port") {
+  .testimonials-box {
+    @include display-flex(column, space-between, center, $spacing-xxl);
+    padding: 0;
+    min-height: 70vh;
+  }
+}
+
+@include breakpoint("mobile") {
+  .testimonials-box {
+    min-height: 100vh;
   }
 }

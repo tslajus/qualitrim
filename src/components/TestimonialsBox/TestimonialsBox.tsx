@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import { makeUpperCase } from "@/utils";
-import {
-  GoChevronRight as IconRight,
-  GoChevronLeft as IconLeft,
-} from "react-icons/go";
-import { Paragraph } from "../";
+import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
+import { Paragraph, ArrowIcon } from "../";
 
 type Props = {
   data: Testimonials;
@@ -13,6 +10,8 @@ type Props = {
 function TestimonialsBox({ data }: Props) {
   const [clientNumber, setClientNumber] = useState(1);
   const client = data[clientNumber - 1];
+  const isSmallScreen = useMediaQuery(portSize.desktopSmall);
+  const isMobile = useMediaQuery(portSize.tabPort);
 
   const handleClientNumber = (direction: string | undefined) => {
     direction === "back"
@@ -30,24 +29,35 @@ function TestimonialsBox({ data }: Props) {
 
   return (
     <article className="testimonials-box">
-      <div className="testimonials-box__content ">
+      <div className="testimonials-box__photo ">
         <img
           src={`src/assets/clients/${client.img}`}
           alt={`image of our customer ${client.name}`}
         />
-        <Paragraph color={"light"}>{`"${client.text}"`}</Paragraph>
       </div>
-      <Paragraph color="light">- {makeUpperCase(client.name)} -</Paragraph>
 
-      <div className="testimonials-box__arrows">
-        <button className="testimonials-box__arrow">
-          <IconLeft onClick={() => handleClientNumber("back")} />
-          <span className="sr-only">Previous testimonial</span>
-        </button>
-        <button className="testimonials-box__arrow">
-          <IconRight onClick={() => handleClientNumber("next")} />
-          <span className="sr-only">Next testimonial</span>
-        </button>
+      <div className="testimonials-box__text">
+        <div className="client">
+          <Paragraph color={"light"}>{`"${client.text}"`}</Paragraph>
+        </div>
+
+        <div className="testimonials-box-arrows">
+          <ArrowIcon
+            direction="left"
+            label="testimonial"
+            onClick={() => handleClientNumber("back")}
+            small
+          />
+
+          <Paragraph color="light">- {makeUpperCase(client.name)} -</Paragraph>
+
+          <ArrowIcon
+            direction="right"
+            label="testimonial"
+            onClick={() => handleClientNumber("next")}
+            small
+          />
+        </div>
       </div>
     </article>
   );

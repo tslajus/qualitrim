@@ -3,5 +3,11 @@
 }
 
 .tb--narrow {
-  @include width-height(60%);
+  @include width-height(70%);
+}
+
+@include breakpoint("tab-land") {
+  .tb--narrow {
+    @include width-height(100%);
+  }
 }

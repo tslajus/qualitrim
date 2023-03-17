@@ -6,7 +6,7 @@
     {
       "id": "ct01",
       "name": "David",
-      "text": "I've been a regular at this barber shop for over a year now. They're always professional and listen to what I want. I leave feeling great every time!",
+      "text": "I'm a regular at this barber shop for a year now. They're professional, attentive, and I always leave feeling great!",
       "img": "David.jpg"
     },
     {
@@ -23,7 +23,7 @@
     },
     {
       "id": "ct04",
-      "name": "Christopher",
+      "name": "Chris",
       "text": "This barber shop is amazing! The staff are knowledgeable and take their time to make sure I'm happy with my cut.",
       "img": "Christopher.jpg"
     },

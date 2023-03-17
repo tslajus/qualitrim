@@ -7,8 +7,8 @@
   position: fixed;
   left: 0;
   right: 0;
-  margin-left: auto; /* add these two lines */
-  margin-right: auto; /* to center the header */
+  margin-left: auto;
+  margin-right: auto;
   z-index: $z9;
   transition: $tr-bg-long;
 
@@ -45,13 +45,14 @@
   }
 }
 
+@include breakpoint("desktop-small") {
+  .header__desktop-links {
+    gap: $spacing-lg;
+  }
+}
+
 @include breakpoint("tab-port") {
   .header {
-    &__desktop {
-      &-links {
-        gap: $spacing-md;
-        margin-right: $spacing-lg;
-      }
-    }
+    width: $sz-header-width-small;
   }
 }

@@ -55,3 +55,28 @@
     }
   }
 }
+
+@include breakpoint("desktop-small") {
+  .footer {
+    padding: $spacing-xxl $spacing-xl;
+
+    &__brand {
+      flex: 3;
+    }
+
+    &__contacts {
+      flex: 2;
+    }
+  }
+}
+@include breakpoint("tab-land") {
+  .footer __contacts {
+    flex: 1;
+  }
+}
+
+@include breakpoint("mobile") {
+  .footer__icons {
+    font-size: $fs-xxs;
+  }
+}

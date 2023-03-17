@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties, ReactNode } from "react";
 import { Paragraph, LearnMore } from "../";
 
 type Props = {
@@ -11,9 +11,10 @@ type Props = {
     background?: string;
   };
   action: () => void;
+  children?: ReactNode;
 };
 
-function FeatureBox({ data, action }: Props) {
+function FeatureBox({ data, children, action }: Props) {
   const backgroundStyle: CSSProperties = {
     background: `url(/src/assets/benefits/${data.background})`,
   };
@@ -31,6 +32,7 @@ function FeatureBox({ data, action }: Props) {
         <Paragraph color="light">{data.paragraph}</Paragraph>
         <LearnMore onClick={action} />
       </div>
+      {children}
     </article>
   );
 }
