@@ -6,7 +6,7 @@ type Link = {
 
 type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-type Colors = "primary" | "secondary" | "tertiary" | "light" | "dark";
+type Colors = "primary" | "accent" | "secondary" | "light" | "dark";
 
 type ScrollBtn = {
   text: string;
@@ -19,6 +19,12 @@ type Testimonials = {
   text: string;
   img: string;
 }[];
+
+type AnimationProps = {
+  x?: number;
+  duration?: number;
+  delay?: number;
+};
 
 type BenefitsData = {
   data: {

@@ -46,7 +46,7 @@ $ls-small: 0.1em;
 .subheading {
   @include font-style(
     $ff-subheading,
-    $color-tertiary,
+    $color-secondary,
     $fs-subheading,
     $fw-bold
   );

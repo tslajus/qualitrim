@@ -6,6 +6,7 @@ function Home() {
   return (
     <section id="home" className="home">
       <HomeTextBox data={data} />
+
       <HomeIllustration />
     </section>
   );

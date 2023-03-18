@@ -18,12 +18,14 @@
 
     &-info {
       @include display-flex(column, center, center, $spacing-lg);
+      // @include font-style("", $color-dark, $size: $fs-xxxs);
+
       width: 100%;
       aspect-ratio: 1;
       font-size: $fs-xxxs;
       text-align: center;
       padding: $spacing-xl;
-      background-color: $color-dark-transparent;
+      background-color: $color-secondary-transparent;
       user-select: none;
       position: absolute;
       top: 0;
@@ -38,7 +40,7 @@
     img {
       @include width-height(100%, 100%);
 
-      aspect-ratio: 1;
+      border: solid $color-primary $spacing-xs;
       object-fit: cover;
     }
   }

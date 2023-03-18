@@ -5,16 +5,17 @@
   background-color: $color-dark;
   border-left: $sz-wrapper-border solid;
   border-right: $sz-wrapper-border solid;
-  border-color: $color-secondary;
+  border-color: $color-accent;
+  overflow-x: hidden;
   transition: $tr-all-very-long;
 
   &--home {
-    border-color: $color-secondary;
+    border-color: $color-accent;
   }
 
   &--benefits,
   &--testimonials {
-    border-color: $color-tertiary;
+    border-color: $color-secondary;
   }
 
   &--team,

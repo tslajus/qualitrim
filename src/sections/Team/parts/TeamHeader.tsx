@@ -7,10 +7,11 @@ function TeamHeader({ data }: TeamData) {
       <Heading
         text={data.heading}
         h="h2"
-        color="tertiary"
+        color="accent"
         firstWords={1}
         color2="primary"
       />
+
       <Paragraph color="light">{data.paragraph}</Paragraph>
     </TextBlock>
   );

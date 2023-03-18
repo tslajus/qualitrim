@@ -2,7 +2,7 @@
 .header {
   @include display-flex(row, space-between, center);
   @include width-height($sz-header-width, $sz-header-desktop);
-  background-color: $color-dark;
+  background-color: transparent;
   padding: $spacing-md $spacing-xl;
   position: fixed;
   left: 0;
@@ -10,7 +10,7 @@
   margin-left: auto;
   margin-right: auto;
   z-index: $z9;
-  transition: $tr-bg-long;
+  transition: $tr-bg-medium;
 
   &--on-scroll {
     background-color: $color-dark-tint;

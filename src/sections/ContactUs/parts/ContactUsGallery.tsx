@@ -1,4 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
+import { PageContext } from "@/context/PageContext";
+import { AnimatePresence, motion } from "framer-motion";
+
 import { useInterval } from "@/hooks";
 import { makeUpperCase } from "@/utils";
 
@@ -8,22 +11,36 @@ function ContactUsGallery({ gallery, shadow }: Props) {
   const [imageNumber, setImageNumber] = useState(1);
   const image = gallery[imageNumber - 1].img;
 
+  const { fadeInReverseFaster, fadeInStatic, fadeInStaticLong, exitAnimation } =
+    useContext(PageContext);
+
   useInterval(() => {
     setImageNumber(imageNumber === gallery.length ? 1 : imageNumber + 1);
-  }, 3000);
+  }, 6000);
 
   const renderedImg = (
-    <img src={`src/assets/gallery/${image}`} alt="image of a barber shop" />
+    <AnimatePresence mode="wait">
+      <motion.img
+        {...fadeInStatic}
+        {...exitAnimation}
+        src={`src/assets/gallery/${image}`}
+        alt="image of a barber shop"
+        key={image}
+      />
+    </AnimatePresence>
   );
 
   return (
     <>
-      <div className="contacts__gallery">
+      <motion.div {...fadeInReverseFaster} className="contacts__gallery">
         <figure className="contacts__gallery-img">{renderedImg}</figure>
-        <span className="text-shadow contacts__gallery-shadow">
+        <motion.span
+          className="text-shadow contacts__gallery-shadow"
+          {...fadeInStaticLong}
+        >
           {makeUpperCase(shadow)}
-        </span>
-      </div>
+        </motion.span>
+      </motion.div>
     </>
   );
 }

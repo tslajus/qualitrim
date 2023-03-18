@@ -8,12 +8,14 @@ function ContactUsForm({ data }: ContactUsData) {
         <Heading
           text={data.heading}
           h="h2"
-          color="tertiary"
+          color="primary"
           firstWords={3}
-          color2="primary"
+          color2="accent"
         />
+
         <Paragraph color="light">{data.paragraph}</Paragraph>
       </TextBlock>
+
       <MessageForm CTA={data.CTA} />
     </div>
   );

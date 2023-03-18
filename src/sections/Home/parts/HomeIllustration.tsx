@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import { PageContext } from "@/context/PageContext";
+import { motion } from "framer-motion";
 import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 
 function HomeIllustration() {
   const isDesktopBig = useMediaQuery(portSize.desktopBig);
+  const { fadeInReverseFaster } = useContext(PageContext);
 
   const renderedImg = (
     <img
@@ -10,7 +14,11 @@ function HomeIllustration() {
     />
   );
 
-  return <div className="home__asset">{renderedImg}</div>;
+  return (
+    <motion.div className="home__asset" {...fadeInReverseFaster}>
+      {renderedImg}
+    </motion.div>
+  );
 }
 
 export default HomeIllustration;

@@ -1,5 +1,6 @@
 .feature {
   @include display-flex(column, "", center, $spacing-lg);
+  border: solid $color-secondary $spacing-xs;
 
   background-color: $color-dark;
   padding: $spacing-xl;

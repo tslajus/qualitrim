@@ -1,6 +1,6 @@
 import data from "@/data/navData.json";
 import { useState, useContext } from "react";
-import { SectionContext } from "@/context/SectionContext";
+import { PageContext } from "@/context/PageContext";
 import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 import { useOnTopState, scrollToId, onEnterViewport } from "@/utils";
 import NavDesktop from "./NavDesktop";
@@ -8,7 +8,7 @@ import NavMobile from "./NavMobile";
 import { Logo } from "@/components";
 
 function Header() {
-  const { selectedSection, setSelectedSection } = useContext(SectionContext);
+  const { selectedSection, setSelectedSection } = useContext(PageContext);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const navLinks = data.navLinks;

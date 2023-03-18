@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "@/sass/index.scss";
-import { SectionContextProvider } from "./context/SectionContext";
+import { PageContextProvider } from "./context/PageContext";
 import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <SectionContextProvider>
+    <PageContextProvider>
       <App />
-    </SectionContextProvider>
+    </PageContextProvider>
   </React.StrictMode>
 );

@@ -8,9 +8,16 @@ type Props = {
   label?: string;
   onClick?: () => void;
   small?: boolean;
+  disabled?: boolean;
 };
 
-function ArrowIcon({ direction, label, onClick, small = false }: Props) {
+function ArrowIcon({
+  direction,
+  label,
+  onClick,
+  small = false,
+  disabled = false,
+}: Props) {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (event.key === "Enter") {
       onClick?.();
@@ -25,6 +32,7 @@ function ArrowIcon({ direction, label, onClick, small = false }: Props) {
         tabIndex={0}
         onClick={onClick}
         onKeyDown={handleKeyDown}
+        disabled={disabled}
       >
         <IconRight />
         <span className="sr-only">{`Next ${label}`}</span>

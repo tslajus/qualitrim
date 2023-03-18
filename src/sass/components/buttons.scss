@@ -4,17 +4,14 @@
   @include font-style($ff-heading, $color-light, $fs-paragraph-big, $fw-light);
   cursor: pointer;
   width: fit-content;
-  background-color: $color-secondary;
+  background-color: $color-accent;
   padding: $spacing-xs $spacing-md;
   text-align: center;
   transition: $tr-bg-short;
 
-  &:hover {
-    background-color: $color-secondary-tint;
-  }
-
+  &:hover,
   &:active {
-    background-color: $color-secondary;
+    background-color: $color-accent-tint;
   }
 }
 
