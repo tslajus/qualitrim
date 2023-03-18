@@ -9,6 +9,11 @@
 
   cursor: pointer;
   user-select: none;
+  transition: $tr-color-medium;
+
+  &:hover {
+    color: $color-accent;
+  }
 }
 
 @include breakpoint("tab-port") {

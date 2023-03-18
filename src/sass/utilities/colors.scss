@@ -1,29 +1,35 @@
 :root {
-  --color-primary: #ebbc65;
+  --color-primary: #ccc5b9;
 }
 
-$color-primary: #ebbc65;
-$color-primary-tint: #edc374;
-$color-primary-shade: #d4a95b;
-$color-secondary: #972b24;
-$color-secondary-tint: #a1403a;
-$color-secondary-shade: #882720;
-$color-tertiary: #4c8886;
-$color-dark: #29313a;
-$color-dark-tint: #3d454f;
-$color-dark-shade: #252c34;
-$color-light: #fff8ec;
-$color-dark-transparent: rgba(37, 44, 52, 0.6);
+$color-primary: #ccc5b9;
+$color-primary-tint: #dbd6ce;
+$color-primary-shade: #a39e94;
+
+$color-secondary: #666461;
+$color-secondary-transparent: #a4a19c6f;
+
+$color-light: #fffcf2;
+
+$color-dark: #252422;
+$color-dark-tint: #3b3a38;
+$color-dark-shade: #070707;
+$color-dark-transparent: #252422a9;
+
+$color-accent: #eb5e28;
+$color-accent-tint: #ed6e3e;
+$color-accent-shade: #d45524;
+$color-accent-dark: #55220e;
 
 .color {
   &--primary {
     color: $color-primary;
   }
+  &--accent {
+    color: $color-accent;
+  }
   &--secondary {
     color: $color-secondary;
-  }
-  &--tertiary {
-    color: $color-tertiary;
   }
   &--dark {
     color: $color-dark;

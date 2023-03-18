@@ -14,7 +14,7 @@
     padding: $spacing-sm;
 
     &::placeholder {
-      color: $color-tertiary;
+      color: $color-secondary;
     }
 
     &:focus {
@@ -27,7 +27,7 @@
     }
 
     &:valid {
-      border: 3px solid $color-tertiary;
+      border: 3px solid $color-secondary;
     }
   }
 
@@ -46,7 +46,7 @@
 
   .required-field {
     &:invalid {
-      border: 2px solid $color-secondary;
+      border: 2px solid $color-accent;
       background-color: $color-dark-tint;
       color: $color-light;
     }

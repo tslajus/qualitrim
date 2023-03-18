@@ -1,4 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
+import { PageContext } from "@/context/PageContext";
+import { motion } from "framer-motion";
 import Button from "../Buttons/Button";
 
 type FormData = {
@@ -15,6 +17,8 @@ function MessageForm({ CTA }: { CTA: string }) {
     email: "",
     message: "",
   });
+
+  const { fadeInSlower } = useContext(PageContext);
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -57,7 +61,12 @@ function MessageForm({ CTA }: { CTA: string }) {
   }, [formRef]);
 
   return (
-    <form onSubmit={handleSumbit} className="message-form" ref={formRef}>
+    <motion.form
+      {...fadeInSlower}
+      onSubmit={handleSumbit}
+      className="message-form"
+      ref={formRef}
+    >
       <input
         className={`message-form__element ${
           emptyFieldSubmitted ? "required-field" : ""
@@ -99,10 +108,11 @@ function MessageForm({ CTA }: { CTA: string }) {
         }
         required
       ></textarea>
+
       <Button type="submit" onClick={handleSumbit}>
         {CTA}
       </Button>
-    </form>
+    </motion.form>
   );
 }
 

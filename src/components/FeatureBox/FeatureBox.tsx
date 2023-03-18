@@ -1,4 +1,6 @@
-import { CSSProperties, ReactNode } from "react";
+import { useContext, CSSProperties, ReactNode } from "react";
+import { PageContext } from "@/context/PageContext";
+import { motion } from "framer-motion";
 import { Paragraph, LearnMore } from "../";
 
 type Props = {
@@ -15,6 +17,8 @@ type Props = {
 };
 
 function FeatureBox({ data, children, action }: Props) {
+  const { fadeInSlower, exitAnimation } = useContext(PageContext);
+
   const backgroundStyle: CSSProperties = {
     background: `url(/src/assets/benefits/${data.background})`,
   };
@@ -25,13 +29,27 @@ function FeatureBox({ data, children, action }: Props) {
       style={backgroundStyle}
       aria-labelledby={`title-${data.id}`}
     >
-      <img className="feature-icon" src={`src/assets/icons/${data.icon}`} />
+      <motion.img
+        className="feature-icon"
+        src={`src/assets/icons/${data.icon}`}
+        key={data.background}
+        {...fadeInSlower}
+        {...exitAnimation}
+      />
 
-      <div className="feature__text">
-        <h4 className="text-narrow">{data.title}</h4>
+      <motion.div
+        className="feature__text"
+        key={data.id}
+        {...fadeInSlower}
+        {...exitAnimation}
+      >
+        <h4 className="text-narrow color--accent">{data.title}</h4>
+
         <Paragraph color="light">{data.paragraph}</Paragraph>
+
         <LearnMore onClick={action} />
-      </div>
+      </motion.div>
+
       {children}
     </article>
   );

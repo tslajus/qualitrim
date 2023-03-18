@@ -1,4 +1,5 @@
 import data from "@/data/clientsData.json";
+
 import { TestimonialsBox } from "@/components";
 import ClientsHeader from "./parts/ClientsHeader";
 

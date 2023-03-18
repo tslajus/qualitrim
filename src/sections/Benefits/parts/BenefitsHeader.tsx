@@ -13,8 +13,9 @@ function BenefitsHeader({ data }: BenefitsData) {
         h="h2"
         color="dark"
         firstWords={1}
-        color2="secondary"
+        color2="accent"
       />
+
       <Paragraph color="dark">{data.paragraph}</Paragraph>
     </TextBlock>
   );

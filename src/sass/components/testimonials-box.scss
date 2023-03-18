@@ -1,7 +1,7 @@
 .testimonials-box {
   @include display-flex(column, space-between, center, $spacing-lg);
   @include width-height(100%, 100%);
-  background-color: $color-tertiary;
+  background-color: $color-secondary;
   z-index: $z5;
   padding: $spacing-xxl;
   position: relative;
@@ -13,8 +13,8 @@
     overflow: hidden;
 
     img {
-      width: 100%;
-      aspect-ratio: 1;
+      @include width-height(100%, 100%);
+      border: solid $color-primary $spacing-xs;
       object-fit: cover;
     }
   }
