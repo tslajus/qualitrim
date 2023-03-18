@@ -1,6 +1,6 @@
 QUALITRIM LANDING PAGE
 
-Welcome to the Qualitrim landing page! This is a dummy landing page designed to showcase my front-end development skills while working on fundamental concepts.
+Welcome to the Qualitrim landing page! This is a dummy landing page I designed to showcase my front-end development skills while working on fundamental concepts.
 
 
 
