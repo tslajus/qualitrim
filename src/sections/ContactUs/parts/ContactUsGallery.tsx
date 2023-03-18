@@ -1,7 +1,6 @@
 import { useState, useContext } from "react";
 import { PageContext } from "@/context/PageContext";
 import { AnimatePresence, motion } from "framer-motion";
-
 import { useInterval } from "@/hooks";
 import { makeUpperCase } from "@/utils";
 

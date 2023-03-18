@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { PageContext } from "@/context/PageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInterval } from "@/hooks";
-import { makeUpperCase } from "@/utils";
+import { makeUpperCase, swipeHandler } from "@/utils";
 import { Paragraph, ArrowIcon } from "../";
 
 type Props = {
@@ -41,8 +41,17 @@ function TestimonialsBox({ data }: Props) {
     return () => clearTimeout(timeoutId);
   });
 
+  const { swipeLeft, swipeRight } = swipeHandler({
+    onSwipeLeft: () => handleClick("back"),
+    onSwipeRight: () => handleClick("next"),
+  });
+
   return (
-    <article className="testimonials-box">
+    <article
+      className="testimonials-box"
+      onTouchStart={swipeLeft}
+      onTouchEnd={swipeRight}
+    >
       <AnimatePresence mode="wait">
         <motion.div
           className="testimonials-box__photo"

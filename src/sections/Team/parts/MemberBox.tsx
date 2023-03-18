@@ -13,26 +13,25 @@ type Props = {
 };
 
 function TeamMemberBox({ data }: Props) {
-  const { fadeInStatic } = useContext(PageContext);
+  const { fadeInStatic, fadeInSlower } = useContext(PageContext);
 
   return (
-    <article className="team__members-profile">
+    <motion.article className="team__members-profile" {...fadeInStatic}>
       <img
         src={`src/assets/team/${data.img}`}
         alt={`image of our team member ${data.name}`}
       />
-      <motion.span
+      <span
         className="paragraph color--primary"
         aria-label={`team member ${data.name}`}
-        {...fadeInStatic}
       >
         - {makeUpperCase(data.name)} -
-      </motion.span>
+      </span>
 
       <div className="team__members-info">
         <Paragraph color="light">{data.text}</Paragraph>
       </div>
-    </article>
+    </motion.article>
   );
 }
 

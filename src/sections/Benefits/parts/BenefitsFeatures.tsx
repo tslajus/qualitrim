@@ -3,7 +3,7 @@ import { PageContext } from "@/context/PageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 import { useInterval } from "@/hooks";
-import { scrollToId } from "@/utils";
+import { scrollToId, swipeHandler } from "@/utils";
 import { FeatureBox, ArrowIcon } from "@/components";
 
 function BenefitsFeatures({ data }: BenefitsData) {
@@ -35,6 +35,11 @@ function BenefitsFeatures({ data }: BenefitsData) {
     },
     clicked ? null : 6000
   );
+
+  const { swipeLeft, swipeRight } = swipeHandler({
+    onSwipeLeft: () => handleClick("back"),
+    onSwipeRight: () => handleClick("next"),
+  });
 
   const forSmallScreen = (
     <AnimatePresence mode="wait">
@@ -74,7 +79,12 @@ function BenefitsFeatures({ data }: BenefitsData) {
   const rendered = isSmallScreen ? forSmallScreen : forBigScreen;
 
   return (
-    <motion.div {...fadeInReverse} className="benefits__features">
+    <motion.div
+      {...fadeInReverse}
+      className="benefits__features"
+      onTouchStart={swipeLeft}
+      onTouchEnd={swipeRight}
+    >
       {rendered}
     </motion.div>
   );
