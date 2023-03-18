@@ -1,4 +1,6 @@
+import benefits from "@/data/benefitsData.json";
 import { useContext, CSSProperties, ReactNode } from "react";
+import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 import { PageContext } from "@/context/PageContext";
 import { motion } from "framer-motion";
 import { Paragraph, LearnMore } from "../";
@@ -19,8 +21,13 @@ type Props = {
 function FeatureBox({ data, children, action }: Props) {
   const { fadeInSlower, exitAnimation } = useContext(PageContext);
 
+  const isMobile = useMediaQuery(portSize.desktopSmall);
+
+  const mobileBackground = "benefits_2.jpg";
   const backgroundStyle: CSSProperties = {
-    background: `url(/src/assets/benefits/${data.background})`,
+    background: `url(/src/assets/benefits/${
+      isMobile ? mobileBackground : data.background
+    })`,
   };
 
   return (
