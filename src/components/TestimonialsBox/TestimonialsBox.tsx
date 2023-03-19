@@ -60,7 +60,7 @@ function TestimonialsBox({ data }: Props) {
           {...exitAnimation}
         >
           <img
-            src={`src/assets/clients/${client.img}`}
+            src={`/assets/clients/${client.img}`}
             alt={`image of our customer ${client.name}`}
           />
         </motion.div>

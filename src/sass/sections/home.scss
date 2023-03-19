@@ -65,7 +65,7 @@
 
 @include breakpoint("desktop-small") {
   .home {
-    background-image: url("src/assets/home/home_img_background.jpg");
+    background-image: url("/assets/home/home_img_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

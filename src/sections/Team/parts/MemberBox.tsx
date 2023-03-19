@@ -18,7 +18,7 @@ function TeamMemberBox({ data }: Props) {
   return (
     <motion.article className="team__members-profile" {...fadeInStatic}>
       <img
-        src={`src/assets/team/${data.img}`}
+        src={`/assets/team/${data.img}`}
         alt={`image of our team member ${data.name}`}
       />
       <span

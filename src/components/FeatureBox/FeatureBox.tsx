@@ -25,7 +25,7 @@ function FeatureBox({ data, children, action }: Props) {
 
   const mobileBackground = "benefits_2.jpg";
   const backgroundStyle: CSSProperties = {
-    background: `url(/src/assets/benefits/${
+    background: `url(/assets/benefits/${
       isMobile ? mobileBackground : data.background
     })`,
   };
@@ -38,7 +38,7 @@ function FeatureBox({ data, children, action }: Props) {
     >
       <motion.img
         className="feature-icon"
-        src={`src/assets/icons/${data.icon}`}
+        src={`/assets/icons/${data.icon}`}
         key={data.background}
         {...fadeInSlower}
         {...exitAnimation}

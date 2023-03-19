@@ -22,7 +22,7 @@ function ContactUsGallery({ gallery, shadow }: Props) {
       <motion.img
         {...fadeInStatic}
         {...exitAnimation}
-        src={`src/assets/gallery/${image}`}
+        src={`/assets/gallery/${image}`}
         alt="image of a barber shop"
         key={image}
       />
