@@ -1,20 +1,26 @@
 function getAnimationProps(
   x: number = 0,
   duration: number = 0.5,
-  delay: number = 0
+  delay: number = 0,
+  offScreen: boolean = false
 ) {
   const animationVariants = {
     hidden: { opacity: 0, x: x },
     visible: { opacity: 1, x: 0 },
   };
 
-  const animationProps = {
+  const animationProps: any = {
     initial: "hidden",
-    whileInView: "visible",
-    viewport: { once: true, amount: 0.5 },
     transition: { duration: duration, delay: delay },
     variants: animationVariants,
   };
+
+  if (offScreen) {
+    animationProps.animate = "visible";
+  } else {
+    animationProps.whileInView = "visible";
+    animationProps.viewport = { once: true, amount: 0.5 };
+  }
 
   return animationProps;
 }
