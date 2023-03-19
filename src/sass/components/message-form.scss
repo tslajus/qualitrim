@@ -57,12 +57,6 @@
   .message-form {
     @include display-flex(column, space-between, start, $spacing-md);
 
-    min-height: 40vh;
-  }
-
-  @include breakpoint("mobile") {
-    .message-form {
-      min-height: 70vh;
-    }
+    min-height: 40rem;
   }
 }

@@ -77,7 +77,7 @@
 
 @include breakpoint("tab-port") {
   .team {
-    padding: $spacing-10xl $spacing-xxl;
+    padding: $spacing-10xl $spacing-xxl $spacing-xxl;
     gap: $spacing-xl;
 
     &__members {
