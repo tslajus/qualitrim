@@ -37,7 +37,7 @@ function TestimonialsBox({ data }: Props) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setArrowDisabled(false);
-    }, 400);
+    }, 600);
     return () => clearTimeout(timeoutId);
   });
 
