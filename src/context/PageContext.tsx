@@ -18,6 +18,7 @@ type PageContextType = {
   fadeInStatic: AnimationProps;
   fadeInStaticLong: AnimationProps;
   fadeInStaticFaster: AnimationProps;
+  slideShowReverse: AnimationProps;
   exitAnimation: {
     exit: { opacity: number; transition: { duration: number } };
   };
@@ -35,6 +36,7 @@ const PageContext = createContext<PageContextType>({
   fadeInStatic: {},
   fadeInStaticLong: {},
   fadeInStaticFaster: {},
+  slideShowReverse: {},
 
   exitAnimation: { exit: { opacity: 0, transition: { duration: 0.4 } } },
 });
@@ -50,6 +52,7 @@ const PageContextProvider = ({ children }: Props) => {
   const fadeInStatic = getAnimationProps(0, 1.8, 0.4);
   const fadeInStaticLong = getAnimationProps(0, 3, 0.8);
   const fadeInStaticFaster = getAnimationProps(0, 1.8, 0.2);
+  const slideShowReverse = getAnimationProps(3, 1, 0, true);
   const exitAnimation = { exit: { opacity: 0, transition: { duration: 0.4 } } };
 
   const sharedValues = {
@@ -64,6 +67,7 @@ const PageContextProvider = ({ children }: Props) => {
     fadeInStatic,
     fadeInStaticLong,
     fadeInStaticFaster,
+    slideShowReverse,
     exitAnimation,
   };
 

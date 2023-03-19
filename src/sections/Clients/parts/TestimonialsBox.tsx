@@ -3,7 +3,7 @@ import { PageContext } from "@/context/PageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInterval } from "@/hooks";
 import { makeUpperCase, swipeHandler } from "@/utils";
-import { Paragraph, ArrowIcon } from "../";
+import { Paragraph, ArrowIcon } from "@/components";
 
 type Props = {
   data: Testimonials;
@@ -14,7 +14,8 @@ function TestimonialsBox({ data }: Props) {
   const [arrowDisabled, setArrowDisabled] = useState(false);
   const [clicked, setClicked] = useState(false);
   const client = data[clientNumber - 1];
-  const { fadeInReverse, exitAnimation } = useContext(PageContext);
+  const { fadeInReverse, slideShowReverse, exitAnimation } =
+    useContext(PageContext);
 
   const handleClick = (direction: string | undefined) => {
     if (!arrowDisabled) {
@@ -52,25 +53,27 @@ function TestimonialsBox({ data }: Props) {
       onTouchStart={swipeLeft}
       onTouchEnd={swipeRight}
     >
-      <AnimatePresence mode="wait">
-        <motion.div
-          className="testimonials-box__photo"
-          key={client.id}
-          {...fadeInReverse}
-          {...exitAnimation}
-        >
-          <img
-            src={`/assets/clients/${client.img}`}
-            alt={`image of our customer ${client.name}`}
-          />
-        </motion.div>
-      </AnimatePresence>
+      <motion.div {...fadeInReverse}>
+        <AnimatePresence mode="wait">
+          <motion.div
+            className="testimonials-box__photo"
+            key={client.id}
+            {...slideShowReverse}
+            {...exitAnimation}
+          >
+            <img
+              src={`/assets/clients/${client.img}`}
+              alt={`image of our customer ${client.name}`}
+            />
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
 
-      <div className="testimonials-box__text">
+      <motion.div className="testimonials-box__text" {...slideShowReverse}>
         <AnimatePresence mode="wait">
           <motion.div
             className="client"
-            {...fadeInReverse}
+            {...slideShowReverse}
             key={client.id}
             {...exitAnimation}
           >
@@ -97,7 +100,7 @@ function TestimonialsBox({ data }: Props) {
             small
           />
         </motion.div>
-      </div>
+      </motion.div>
     </article>
   );
 }

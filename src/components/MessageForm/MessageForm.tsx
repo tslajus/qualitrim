@@ -24,16 +24,18 @@ function MessageForm({ CTA }: { CTA: string }) {
 
   const handleSumbit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    setFormSubmitted(true);
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
+  const handleSumbitEmpty = () => {
     if (!formData.name || !formData.email || !formData.message) {
       setEmptyFieldSubmitted(true);
-      return;
-    } else {
-      setFormSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
     }
   };
 
@@ -76,7 +78,7 @@ function MessageForm({ CTA }: { CTA: string }) {
         type="text"
         id="name"
         name="name"
-        placeholder={!formSubmitted ? "NAME" : "Thanks for your message!"}
+        placeholder="NAME"
         required
       />
 
@@ -89,7 +91,8 @@ function MessageForm({ CTA }: { CTA: string }) {
         type="email"
         id="email"
         name="email"
-        placeholder={!formSubmitted ? "EMAIL" : "We'll get back to you soon."}
+        placeholder="EMAIL"
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
         required
       ></input>
 
@@ -104,12 +107,12 @@ function MessageForm({ CTA }: { CTA: string }) {
         placeholder={
           !formSubmitted
             ? "MESSAGE"
-            : "Let us know if you have any more questions."
+            : "Thanks for your message! We'll get back to you soon. Let us know if you have any more questions."
         }
         required
       ></textarea>
 
-      <Button type="submit" onClick={handleSumbit}>
+      <Button type="submit" onClick={handleSumbitEmpty}>
         {CTA}
       </Button>
     </motion.form>

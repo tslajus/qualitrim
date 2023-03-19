@@ -72,7 +72,7 @@
       padding: 0 $spacing-5xl;
       img {
         height: auto;
-        max-height: 80vh;
+        max-height: 80rem;
         width: 100%;
       }
     }
@@ -85,6 +85,8 @@
     gap: $spacing-4xl;
 
     &__gallery {
+      height: 100%;
+
       &-shadow {
         display: none;
       }

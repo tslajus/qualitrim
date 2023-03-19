@@ -93,6 +93,7 @@
     .clients {
       &__text-box,
       &__testimonials {
+        height: 90rem;
         padding: $spacing-9xl $spacing-xxl $spacing-5xl;
       }
     }
