@@ -5,8 +5,6 @@ import useMediaQuery, { portSize } from "@/hooks/useMediaQuery";
 import { scrollToId } from "@/utils";
 import { Heading, Paragraph, Button, LearnMore } from "@/components";
 
-import { fadeIn } from "@/utils";
-
 function HomeTextBox({ data }: HomeData) {
   const isMobile = useMediaQuery(portSize.tabPort);
 
