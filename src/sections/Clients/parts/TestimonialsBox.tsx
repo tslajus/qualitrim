@@ -3,7 +3,7 @@ import { PageContext } from "@/context/PageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInterval } from "@/hooks";
 import { makeUpperCase, swipeHandler } from "@/utils";
-import { Paragraph, ArrowIcon } from "../";
+import { Paragraph, ArrowIcon } from "@/components";
 
 type Props = {
   data: Testimonials;

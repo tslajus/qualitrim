@@ -1,6 +1,5 @@
 import data from "@/data/clientsData.json";
-
-import { TestimonialsBox } from "@/components";
+import TestimonialsBox from "./parts/TestimonialsBox";
 import ClientsHeader from "./parts/ClientsHeader";
 
 function Clients() {
