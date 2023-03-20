@@ -6,6 +6,7 @@ import { useOnTopState, scrollToId, onEnterViewport } from "@/utils";
 import NavDesktop from "./NavDesktop";
 import NavMobile from "./NavMobile";
 import { Logo } from "@/components";
+import Wrapper from "../Wrapper/Wrapper";
 
 function Header() {
   const { selectedSection, setSelectedSection } = useContext(PageContext);
@@ -46,10 +47,12 @@ function Header() {
   );
 
   return (
-    <header className={`header ${!onTop ? "header--on-scroll" : ""}`}>
-      <Logo />
-      {renderedNav}
-    </header>
+    <Wrapper>
+      <header className={`header ${!onTop ? "header--on-scroll" : ""}`}>
+        <Logo />
+        {renderedNav}
+      </header>
+    </Wrapper>
   );
 }
 
