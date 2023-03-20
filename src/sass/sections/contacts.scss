@@ -1,18 +1,18 @@
 .contacts {
-  @include display-flex(row, space-between, start, $spacing-5xl);
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: $spacing-5xl;
   padding: $spacing-10xl $spacing-5xl $spacing-10xl;
 
   &__form {
     @include display-flex(column, center, center, $spacing-4xl);
     @include width-height(100%, 100%);
-    flex: 3;
     height: $sz-form;
   }
   &__gallery {
     @include display-flex(row, center, start);
     @include width-height(100%, 100%);
 
-    flex: 2;
     position: relative;
 
     &-img {
@@ -49,9 +49,11 @@
       height: $sz-form-sm;
     }
 
-    &__gallery-img {
-      img {
-        height: $sz-form-sm;
+    &__gallery {
+      &-img {
+        img {
+          height: $sz-form-sm;
+        }
       }
     }
 
@@ -64,16 +66,23 @@
 
 @include breakpoint("desktop-small") {
   .contacts {
-    @include display-flex(column, space-between, start, $spacing-5xl);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: $spacing-4xl;
     padding-top: $spacing-10xl;
 
-    &__gallery-img {
-      width: 100%;
-      padding: 0 $spacing-5xl;
-      img {
-        height: auto;
-        max-height: 80rem;
+    &__gallery {
+      @include display-flex(row, center, end);
+
+      &-img {
         width: 100%;
+        padding: 0 $spacing-5xl;
+
+        img {
+          height: auto;
+          max-height: 80rem;
+          width: 100%;
+        }
       }
     }
   }
@@ -82,7 +91,7 @@
 @include breakpoint("tab-port") {
   .contacts {
     padding: $spacing-10xl $spacing-xxl $spacing-4xl;
-    gap: $spacing-4xl;
+    gap: $spacing-5xl;
 
     &__gallery {
       height: 100%;
@@ -93,7 +102,18 @@
 
       &-img {
         padding: 0;
+
+        img {
+          height: auto;
+          max-height: 60rem;
+        }
       }
     }
+  }
+}
+
+@include breakpoint("mobile") {
+  .contacts {
+    gap: $spacing-xl;
   }
 }

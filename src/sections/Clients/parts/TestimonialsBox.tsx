@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { PageContext } from "@/context/PageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInterval } from "@/hooks";
-import { makeUpperCase, swipeHandler } from "@/utils";
+import { makeUpperCase, swipeHandler, preloadImages } from "@/utils";
 import { Paragraph, ArrowIcon } from "@/components";
 
 type Props = {
@@ -42,6 +42,12 @@ function TestimonialsBox({ data }: Props) {
     return () => clearTimeout(timeoutId);
   });
 
+  useEffect(() => {
+    const images = data.map((client) => `/assets/clients/${client.img}`);
+    preloadImages(images);
+    console.log(images);
+  }, [data]);
+
   const { swipeLeft, swipeRight } = swipeHandler({
     onSwipeLeft: () => handleClick("back"),
     onSwipeRight: () => handleClick("next"),
@@ -54,19 +60,16 @@ function TestimonialsBox({ data }: Props) {
       onTouchEnd={swipeRight}
     >
       <motion.div {...fadeInReverse}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            className="testimonials-box__photo"
-            key={client.id}
-            {...slideShowReverse}
-            {...exitAnimation}
-          >
-            <img
+        <div className="testimonials-box__photo" key={client.id}>
+          <AnimatePresence mode="wait">
+            <motion.img
               src={`/assets/clients/${client.img}`}
               alt={`image of our customer ${client.name}`}
+              {...slideShowReverse}
+              {...exitAnimation}
             />
-          </motion.div>
-        </AnimatePresence>
+          </AnimatePresence>
+        </div>
       </motion.div>
 
       <motion.div className="testimonials-box__text" {...slideShowReverse}>

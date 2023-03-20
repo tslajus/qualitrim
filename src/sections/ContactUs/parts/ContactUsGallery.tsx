@@ -1,8 +1,8 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { PageContext } from "@/context/PageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInterval } from "@/hooks";
-import { makeUpperCase } from "@/utils";
+import { makeUpperCase, preloadImages } from "@/utils";
 
 type Props = { gallery: { id: string; img: string }[]; shadow: string };
 
@@ -28,6 +28,12 @@ function ContactUsGallery({ gallery, shadow }: Props) {
       />
     </AnimatePresence>
   );
+
+  useEffect(() => {
+    const images = gallery.map((item) => `/assets/gallery/${item.img}`);
+    preloadImages(images);
+    console.log(images);
+  }, [gallery]);
 
   return (
     <>
