@@ -71,7 +71,7 @@
 
 @include breakpoint("tab-port") {
   .feature {
-    height: auto;
+    height: 80rem;
 
     &__text {
       gap: $spacing-lg;
