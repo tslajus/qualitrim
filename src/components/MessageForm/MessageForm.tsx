@@ -11,7 +11,6 @@ type FormData = {
 
 function MessageForm({ CTA }: { CTA: string }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [emptyFieldSubmitted, setEmptyFieldSubmitted] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -33,12 +32,6 @@ function MessageForm({ CTA }: { CTA: string }) {
     });
   };
 
-  const handleSumbitEmpty = () => {
-    if (!formData.name || !formData.email || !formData.message) {
-      setEmptyFieldSubmitted(true);
-    }
-  };
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -49,19 +42,6 @@ function MessageForm({ CTA }: { CTA: string }) {
     }));
   };
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (formRef.current && !formRef.current.contains(event.target as Node)) {
-        setEmptyFieldSubmitted(false);
-      }
-    }
-
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [formRef]);
-
   return (
     <motion.form
       {...fadeIn}
@@ -70,9 +50,7 @@ function MessageForm({ CTA }: { CTA: string }) {
       ref={formRef}
     >
       <input
-        className={`message-form__element ${
-          emptyFieldSubmitted ? "required-field" : ""
-        }`}
+        className="message-form__element"
         onChange={handleChange}
         value={formData.name}
         type="text"
@@ -83,9 +61,7 @@ function MessageForm({ CTA }: { CTA: string }) {
       />
 
       <input
-        className={`message-form__element ${
-          emptyFieldSubmitted ? "required-field" : ""
-        }`}
+        className="message-form__element"
         onChange={handleChange}
         value={formData.email}
         type="email"
@@ -97,9 +73,7 @@ function MessageForm({ CTA }: { CTA: string }) {
       ></input>
 
       <textarea
-        className={`message-form__element ${
-          emptyFieldSubmitted ? "required-field" : ""
-        }`}
+        className="message-form__element"
         onChange={handleChange}
         value={formData.message}
         id="message"
@@ -112,9 +86,7 @@ function MessageForm({ CTA }: { CTA: string }) {
         required
       ></textarea>
 
-      <Button type="submit" onClick={handleSumbitEmpty}>
-        {CTA}
-      </Button>
+      <Button type="submit">{CTA}</Button>
     </motion.form>
   );
 }
