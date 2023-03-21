@@ -13,6 +13,14 @@
   &:active {
     background-color: $color-accent-tint;
   }
+
+  &::-moz-selection {
+    color: $color-dark;
+  }
+
+  &::selection {
+    color: $color-dark;
+  }
 }
 
 .menu-btn {
