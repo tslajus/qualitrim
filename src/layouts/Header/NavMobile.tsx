@@ -1,4 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
+import { PageContext } from "@/context/PageContext";
+import { AnimatePresence, motion } from "framer-motion";
+
 import { scrollToId } from "@/utils";
 import { HamburgerButton, Button } from "@/components";
 
@@ -12,6 +15,8 @@ type Props = {
 function NavMobile({ links, button, isMenuOpen, setIsMenuOpen }: Props) {
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
+  const { menuOpen, menuClosed, fadeInReverse, exitAnimation } =
+    useContext(PageContext);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -45,15 +50,30 @@ function NavMobile({ links, button, isMenuOpen, setIsMenuOpen }: Props) {
         <HamburgerButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       </div>
 
-      {isMenuOpen && (
-        <nav className="header__mobile" ref={menuRef}>
-          <div className="header__mobile-links">{links}</div>
+      <AnimatePresence mode="wait">
+        {isMenuOpen && (
+          <motion.nav
+            className="header__mobile"
+            ref={menuRef}
+            {...menuOpen}
+            {...menuClosed}
+          >
+            <motion.div
+              className="header__mobile-links"
+              {...fadeInReverse}
+              {...exitAnimation}
+            >
+              {links}
+            </motion.div>
 
-          <Button onClick={() => handleLinkClick(button.scrollTo)}>
-            {button.text}
-          </Button>
-        </nav>
-      )}
+            <motion.div {...fadeInReverse} {...exitAnimation}>
+              <Button onClick={() => handleLinkClick(button.scrollTo)}>
+                {button.text}
+              </Button>
+            </motion.div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </>
   );
 }

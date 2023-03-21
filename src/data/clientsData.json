@@ -53,12 +53,18 @@
     },
     {
       "id": "ct09",
+      "name": "Tadas",
+      "text": "This place delivers an excellent experience. Skilled and attentive staff ensure that I leave satisfied with my haircut every time.",
+      "img": "Tadas.webp"
+    },
+    {
+      "id": "ct10",
       "name": "Adam",
       "text": "I love the atmosphere at this barber shop. The staff are welcoming, and it's a great place to relax and catch up with friends.",
       "img": "Adam.webp"
     },
     {
-      "id": "ct10",
+      "id": "ct11",
       "name": "Tyler",
       "text": "This barber shop has changed my life. The staff are friendly and make sure I'm comfortable. I always leave feeling great.",
       "img": "Tyler.webp"

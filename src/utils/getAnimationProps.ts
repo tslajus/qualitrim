@@ -2,10 +2,11 @@ function getAnimationProps(
   x: number = 0,
   duration: number = 0.5,
   delay: number = 0,
+  opacity: number = 0,
   offScreen: boolean = false
 ) {
   const animationVariants = {
-    hidden: { opacity: 0, x: x },
+    hidden: { opacity: opacity, x: x },
     visible: { opacity: 1, x: 0 },
   };
 

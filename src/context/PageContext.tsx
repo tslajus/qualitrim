@@ -19,6 +19,8 @@ type PageContextType = {
   fadeInStaticLong: AnimationProps;
   fadeInStaticFaster: AnimationProps;
   slideShowReverse: AnimationProps;
+  menuOpen: AnimationProps;
+  menuClosed: AnimationProps;
   exitAnimation: {
     exit: { opacity: number; transition: { duration: number } };
   };
@@ -36,6 +38,8 @@ const PageContext = createContext<PageContextType>({
   fadeInStatic: {},
   fadeInStaticLong: {},
   fadeInStaticFaster: {},
+  menuOpen: {},
+  menuClosed: {},
   slideShowReverse: {},
 
   exitAnimation: { exit: { opacity: 0, transition: { duration: 0.4 } } },
@@ -52,7 +56,19 @@ const PageContextProvider = ({ children }: Props) => {
   const fadeInStatic = getAnimationProps(0, 1.8, 0.4);
   const fadeInStaticLong = getAnimationProps(0, 3, 0.8);
   const fadeInStaticFaster = getAnimationProps(0, 1.8, 0.2);
-  const slideShowReverse = getAnimationProps(3, 1, 0, true);
+  const slideShowReverse = getAnimationProps(3, 1, 0, 0, true);
+
+  const menuOpen = getAnimationProps(400, 0.5, 0, 1, true);
+  const menuClosed = {
+    exit: {
+      opacity: 0,
+      x: 300,
+      transition: {
+        duration: 0.4,
+      },
+    },
+  };
+
   const exitAnimation = { exit: { opacity: 0, transition: { duration: 0.4 } } };
 
   const sharedValues = {
@@ -68,6 +84,10 @@ const PageContextProvider = ({ children }: Props) => {
     fadeInStaticLong,
     fadeInStaticFaster,
     slideShowReverse,
+
+    menuOpen,
+    menuClosed,
+
     exitAnimation,
   };
 

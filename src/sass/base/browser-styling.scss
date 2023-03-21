@@ -12,3 +12,13 @@
 ::-webkit-scrollbar-track {
   background-color: $color-dark;
 }
+
+::-moz-selection {
+  color: $color-accent;
+  background: $color-secondary-transparent;
+}
+
+::selection {
+  color: $color-accent;
+  background: $color-secondary-transparent;
+}
