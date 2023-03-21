@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { PageContext } from "@/context/PageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInterval } from "@/hooks";
-import { makeUpperCase, swipeHandler, preloadImages } from "@/utils";
+import { makeUpperCase, swipeHandler } from "@/utils";
 import { Paragraph, ArrowIcon } from "@/components";
 
 type Props = {
@@ -14,6 +14,7 @@ function TestimonialsBox({ data }: Props) {
   const [arrowDisabled, setArrowDisabled] = useState(false);
   const [clicked, setClicked] = useState(false);
   const client = data[clientNumber - 1];
+  const [imageLoaded, setImageLoaded] = useState(false);
   const { fadeInReverse, slideShowReverse, exitAnimation } =
     useContext(PageContext);
 
@@ -32,21 +33,25 @@ function TestimonialsBox({ data }: Props) {
     () => {
       handleClick("next");
     },
-    clicked ? null : 8000
+    clicked ? null : 10000
   );
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setArrowDisabled(false);
-    }, 400);
+    }, 1000);
     return () => clearTimeout(timeoutId);
   });
 
   useEffect(() => {
-    const images = data.map((client) => `/assets/clients/${client.img}`);
-    preloadImages(images);
-    console.log(images);
-  }, [data]);
+    const loadImage = async () => {
+      const img = new Image();
+      img.src = `/assets/clients/${client.img}`;
+      await img.decode();
+      setImageLoaded(true);
+    };
+    loadImage();
+  }, [client]);
 
   const { swipeLeft, swipeRight } = swipeHandler({
     onSwipeLeft: () => handleClick("back"),
@@ -60,16 +65,19 @@ function TestimonialsBox({ data }: Props) {
       onTouchEnd={swipeRight}
     >
       <motion.div {...fadeInReverse}>
-        <div className="testimonials-box__photo" key={client.id}>
-          <AnimatePresence mode="wait">
-            <motion.img
+        <AnimatePresence mode="wait">
+          <motion.div
+            className="testimonials-box__photo"
+            key={client.id}
+            {...slideShowReverse}
+            {...exitAnimation}
+          >
+            <img
               src={`/assets/clients/${client.img}`}
               alt={`image of our customer ${client.name}`}
-              {...slideShowReverse}
-              {...exitAnimation}
             />
-          </AnimatePresence>
-        </div>
+          </motion.div>
+        </AnimatePresence>
       </motion.div>
 
       <motion.div className="testimonials-box__text" {...slideShowReverse}>

@@ -7,7 +7,6 @@
   position: relative;
 
   &__photo {
-    @include display-flex(column, center, end, $spacing-xl);
     width: 100%;
     height: 100%;
     position: relative;
@@ -17,6 +16,12 @@
       @include width-height(100%, 100%);
       border: solid $color-primary $spacing-xs;
       object-fit: cover;
+    }
+
+    &--placeholder {
+      background-color: aqua;
+      @include width-height(1000rem, 1000rem);
+      position: absolute;
     }
   }
 

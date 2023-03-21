@@ -23,7 +23,7 @@ function FeatureBox({ data, children, action }: Props) {
 
   const isMobile = useMediaQuery(portSize.desktopSmall);
 
-  const mobileBackground = "benefits_2.jpg";
+  const mobileBackground = "benefits_2.webp";
   const backgroundStyle: CSSProperties = {
     background: `url(/assets/benefits/${
       isMobile ? mobileBackground : data.background

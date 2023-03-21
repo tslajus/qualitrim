@@ -18,7 +18,7 @@ function MessageForm({ CTA }: { CTA: string }) {
     message: "",
   });
 
-  const { fadeInSlower } = useContext(PageContext);
+  const { fadeIn } = useContext(PageContext);
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -64,7 +64,7 @@ function MessageForm({ CTA }: { CTA: string }) {
 
   return (
     <motion.form
-      {...fadeInSlower}
+      {...fadeIn}
       onSubmit={handleSumbit}
       className="message-form"
       ref={formRef}

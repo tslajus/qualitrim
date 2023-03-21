@@ -9,7 +9,7 @@ function HomeIllustration() {
 
   const renderedImg = (
     <img
-      src={`/assets/home/home_img_${isDesktopBig ? "720" : "1080"}.png`}
+      src={`/assets/home/home_img_${isDesktopBig ? "720" : "1080"}.webp`}
       alt="bearded man"
     />
   );

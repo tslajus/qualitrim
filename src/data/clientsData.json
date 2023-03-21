@@ -7,61 +7,61 @@
       "id": "ct01",
       "name": "David",
       "text": "I'm a regular at this barber shop for a year now. They're professional, attentive, and I always leave feeling great!",
-      "img": "David.jpg"
+      "img": "David.webp"
     },
     {
       "id": "ct02",
       "name": "Jayden",
       "text": "I found this gem of a barber shop after moving to the area. The staff are talented, and I always leave feeling like a new man.",
-      "img": "Jayden.jpg"
+      "img": "Jayden.webp"
     },
     {
       "id": "ct03",
       "name": "Lucas",
       "text": "This is hands down the best barber shop around. The staff are talented and friendly, and the atmosphere is welcoming.",
-      "img": "Lucas.jpg"
+      "img": "Lucas.webp"
     },
     {
       "id": "ct04",
       "name": "Chris",
       "text": "This barber shop is amazing! The staff are knowledgeable and take their time to make sure I'm happy with my cut.",
-      "img": "Christopher.jpg"
+      "img": "Christopher.webp"
     },
     {
       "id": "ct05",
       "name": "Ben",
       "text": "I had to leave a review for this amazing barber shop. The staff are friendly and skilled, and I've never had a bad cut here.",
-      "img": "Ben.jpg"
+      "img": "Ben.webp"
     },
     {
       "id": "ct06",
       "name": "Hunter",
       "text": "I found this barber shop by chance and I'm so glad I did. The staff are talented and make sure I leave feeling confident and refreshed.",
-      "img": "Hunter.jpg"
+      "img": "Hunter.webp"
     },
     {
       "id": "ct07",
       "name": "Cameron",
       "text": "This barber shop offers great prices without sacrificing quality. The staff are professional and make sure I'm happy before I leave.",
-      "img": "Cameron.jpg"
+      "img": "Cameron.webp"
     },
     {
       "id": "ct08",
       "name": "Booker",
       "text": "The attention to detail at this barber shop is impressive. The staff are thorough and always make sure I'm satisfied.",
-      "img": "Booker.jpg"
+      "img": "Booker.webp"
     },
     {
       "id": "ct09",
       "name": "Adam",
       "text": "I love the atmosphere at this barber shop. The staff are welcoming, and it's a great place to relax and catch up with friends.",
-      "img": "Adam.jpg"
+      "img": "Adam.webp"
     },
     {
       "id": "ct10",
       "name": "Tyler",
       "text": "This barber shop has changed my life. The staff are friendly and make sure I'm comfortable. I always leave feeling great.",
-      "img": "Tyler.jpg"
+      "img": "Tyler.webp"
     }
   ]
 }

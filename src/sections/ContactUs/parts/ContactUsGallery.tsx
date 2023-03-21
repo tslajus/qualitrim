@@ -2,11 +2,12 @@ import { useState, useContext, useEffect } from "react";
 import { PageContext } from "@/context/PageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInterval } from "@/hooks";
-import { makeUpperCase, preloadImages } from "@/utils";
+import { makeUpperCase } from "@/utils";
 
 type Props = { gallery: { id: string; img: string }[]; shadow: string };
 
 function ContactUsGallery({ gallery, shadow }: Props) {
+  const [imageLoaded, setImageLoaded] = useState(false);
   const [imageNumber, setImageNumber] = useState(1);
   const image = gallery[imageNumber - 1].img;
 
@@ -30,10 +31,14 @@ function ContactUsGallery({ gallery, shadow }: Props) {
   );
 
   useEffect(() => {
-    const images = gallery.map((item) => `/assets/gallery/${item.img}`);
-    preloadImages(images);
-    console.log(images);
-  }, [gallery]);
+    const loadImage = async () => {
+      const img = new Image();
+      img.src = `/assets/gallery/${image}`;
+      await img.decode();
+      setImageLoaded(true);
+    };
+    loadImage();
+  }, [image]);
 
   return (
     <>
