@@ -1,7 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import { PageContext } from "@/context/PageContext";
 import { AnimatePresence, motion } from "framer-motion";
-import { useInterval } from "@/hooks";
 import { makeUpperCase, swipeHandler } from "@/utils";
 import { Paragraph, ArrowIcon } from "@/components";
 
@@ -12,7 +11,6 @@ type Props = {
 function TestimonialsBox({ data }: Props) {
   const [clientNumber, setClientNumber] = useState(1);
   const [arrowDisabled, setArrowDisabled] = useState(false);
-  const [clicked, setClicked] = useState(false);
   const client = data[clientNumber - 1];
   const [imageLoaded, setImageLoaded] = useState(false);
   const { fadeInReverse, slideShowReverse, exitAnimation } =
@@ -24,17 +22,8 @@ function TestimonialsBox({ data }: Props) {
         ? setClientNumber(clientNumber === 1 ? data.length : clientNumber - 1)
         : setClientNumber(data.length === clientNumber ? 1 : clientNumber + 1);
       setArrowDisabled(true);
-      setClicked(true);
-      setTimeout(() => setClicked(false), 2000);
     }
   };
-
-  useInterval(
-    () => {
-      handleClick("next");
-    },
-    clicked ? null : 10000
-  );
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
